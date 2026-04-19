@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malang Travel Guide — East Java, Indonesia</title>
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- ═══════════════════════════════════════════════════
+     MONETIZATION NOTES (for site owner):
+     1. Google AdSense: Replace YOUR_ADSENSE_ID below & apply at adsense.google.com
+     2. Booking.com Affiliate: Sign up at partners.booking.com (free, ~1 week approval)  Then replace BOOKING_AFFILIATE_ID with your ID
+     3. GetYourGuide Affiliate: Sign up at getyourguide.com/partner
+     4. Google Places: Get key at console.cloud.google.com → replace GOOGLE_PLACES_KEY
+     5. Paid Listings: Businesses pay you to be featured — collect via form below
+═══════════════════════════════════════════════════ -->
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6756551448742131"
+     crossorigin="anonymous"></script>
+
+<style>
+  /* ====== PACKAGES SECTION ====== */
+  section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center; 
+  }
+
+  section h2 {
+    margin-bottom: 10px;
+  }
+
+  section p {
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  /* ====== CONTAINER ====== */
+  section > div {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  /* ====== PACKAGE BOX ====== */
+  section > div > div {
+    background: white;
+    padding: 20px;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    text-align: left;
+  }
+
+  /* ====== LIST ====== */
+  ul {
+    padding-left: 20px;
+    color: #444;
+  }
+
+  /* ====== WHATSAPP BUTTON — only inside packages section ====== */
+  section a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  section a:hover {
+    background-color: #1ebe5d;
+  }
+</style>
+</head>
+ <body>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero">
+  <div class="hero-overlay"></div>
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLang('en',this)">🇬🇧 EN</button>
+    <button class="lang-btn" onclick="setLang('id',this)">🇮🇩 ID</button>
+    <button class="lang-btn" onclick="setLang('ru',this)">🇷🇺 RU</button>
+    <button class="lang-btn" onclick="setLang('ko',this)">🇰🇷 KO</button>
+    <button class="lang-btn" onclick="setLang('no',this)">🇳🇴 NO</button>
+  </div>
+  <div class="clock-bar">
+    <div class="clock-time" id="clock">--:--:--</div>
+    <div class="clock-date" id="clock-date">Malang, East Java</div>
+  </div>
+  <div class="hero-content">
+    <div class="logo">M</div>
+    <h1 data-i18n="hero-title">Welcome to<br><span>Malang</span></h1>
+    <p data-i18n="hero-sub">Your complete guide to East Java's most charming city</p>
+  </div>
+</div>
+
+<!-- ═══════ LIVE WEATHER STRIP ═══════ -->
+<div class="weather-strip" id="weatherStrip">
+  <span class="weather-loading">⛅ Loading live Malang weather...</span>
+</div>
+
+<!-- ═══════ CURRENCY TICKER ═══════ -->
+<div class="currency-ticker" id="currencyTicker">
+  <span class="tick-label">💱 LIVE RATES:</span>
+  <span class="weather-loading" style="color:rgba(255,255,255,0.6);">Loading exchange rates...</span>
+</div>
+
+<!-- ═══════ ADSENSE SLOT (replace with real code) ═══════ -->
+<div class="adsense-slot">
+  <strong>📢 Advertisement Space</strong>
+  Apply at <a href="https://adsense.google.com" target="_blank" style="color:var(--jade);">adsense.google.com</a> with your Netlify domain to activate Google AdSense here. Once approved, replace this div with your AdSense snippet.
+</div>
+
+<!-- ═══════ NAV GRID ═══════ -->
+<div class="nav-grid">
+  <div class="nav-btn" onclick="showSection('prepare',this)"><div class="icon">🎒</div><div class="label" data-i18n="nav-prepare">Before You Go</div></div>
+  <div class="nav-btn" onclick="showSection('weather',this)"><div class="icon">🌤️</div><div class="label" data-i18n="nav-weather">Weather</div></div>
+  <div class="nav-btn" onclick="showSection('costume',this)"><div class="icon">👕</div><div class="label" data-i18n="nav-costume">What to Wear</div></div>
+  <div class="nav-btn" onclick="showSection('equipment',this)"><div class="icon">🧳</div><div class="label" data-i18n="nav-equipment">Equipment</div></div>
+  <div class="nav-btn" onclick="showSection('destinations',this)"><div class="icon">🗺️</div><div class="label" data-i18n="nav-destinations">Destinations</div></div>
+  <div class="nav-btn" onclick="showSection('prices',this)"><div class="icon">💰</div><div class="label" data-i18n="nav-prices">Prices</div></div>
+  <div class="nav-btn" onclick="showSection('currency',this)"><div class="icon">💱</div><div class="label">Currency</div></div>
+  <div class="nav-btn" onclick="showSection('hotels',this)"><div class="icon">🏨</div><div class="label" data-i18n="nav-accommodation">Hotels</div></div>
+  <div class="nav-btn" onclick="showSection('tours',this)"><div class="icon">🎫</div><div class="label">Book Tours</div></div>
+  <div class="nav-btn" onclick="showSection('transport',this)"><div class="icon">🚗</div><div class="label" data-i18n="nav-transport">Transport</div></div>
+  <div class="nav-btn" onclick="showSection('emergency',this)"><div class="icon">🚨</div><div class="label" data-i18n="nav-emergency">Emergency</div></div>
+  <div class="nav-btn" onclick="showSection('dodont',this)"><div class="icon">📋</div><div class="label" data-i18n="nav-dodont">Do's & Don'ts</div></div>
+  <div class="nav-btn" onclick="showSection('market',this)"><div class="icon">🛒</div><div class="label" data-i18n="nav-market">Markets</div></div>
+  <div class="nav-btn" onclick="showSection('map',this)"><div class="icon">📍</div><div class="label" data-i18n="nav-map">Map</div></div>
+  <div class="nav-btn" onclick="showSection('listings',this)"><div class="icon">⭐</div><div class="label">For Businesses</div></div>
+</div>
+
+<!-- ======= PACKAGES CONTAINER ALL ====== -->
+<section>
+  <h2>Choose Your Malang Experience</h2>
+  <p>Simple, flexible, and local-guided trips based on your travel style.</p>
+  <div>
+    <div>
+      <h3>🏍️ Budget Explorer</h3>
+      <p>Perfect for solo travelers</p>
+      <h2>$15 - $30</h2>
+      <ul>
+        <li>Private motorbike tour</li>
+        <li>Local guide (me)</li>
+        <li>Flexible route</li>
+        <li>Food included</li>
+      </ul>
+      <a href="https://wa.me/6281250900387">Chat on WhatsApp</a>
+    </div>
+    <div>
+      <h3>🚗 Group Comfort</h3>
+      <p>Best for friends & small groups</p>
+      <h2>$20 - $30 / person</h2>
+      <ul>
+        <li>Private car + driver</li>
+        <li>2-7 people</li>
+        <li>Shared cost</li>
+        <li>Custom itinerary</li>
+      </ul>
+      <a href="https://wa.me/6281250900387">Plan Your Trip</a>
+    </div>
+    <div>
+      <h3>🌟 Private Custom Experience</h3>
+      <p>Comfort, flexible, personalized</p>
+      <h2>Custom Pricing</h2>
+      <ul>
+        <li>Private car</li>
+        <li>Flexible schedule</li>
+        <li>Relaxed pace</li>
+        <li>Ideal for couples & families</li>
+      </ul>
+      <a href="https://wa.me/6281250900387">Customize Your Trip</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SECTION: PREPARE ═══════ -->
+<div class="section" id="prepare">
+  <h2 class="section-title">📋 Before You Go to Malang</h2>
+  <ul class="checklist" id="checklist">
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Valid passport / national ID</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Indonesian Rupiah (IDR) cash — ATMs available but bring some</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Travel insurance covering medical emergencies</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Accommodation bookings confirmed</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Download Google Maps offline for Malang area</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Download Gojek / Grab app for local transport</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Local SIM card or international roaming plan</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Sunscreen SPF 50+ (tropical sun is intense)</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Light rain jacket (afternoon showers common)</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Mosquito repellent</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Basic medication: paracetamol, antidiarrheal, antihistamine</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Reusable water bottle (stay hydrated)</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Power adapter (Indonesia uses Type C/F, 220V)</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Emergency contact numbers saved</li>
+    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Modest clothing for visiting temples/mosques</li>
+  </ul>
+</div>
+
+<!-- ═══════ SECTION: WEATHER ═══════ -->
+<div class="section" id="weather">
+  <h2 class="section-title">🌤️ Malang Live Weather</h2>
+  <div class="weather-hero" id="weatherHero">
+    <div class="wh-icon">⛅</div>
+    <div class="wh-temp" id="wh-temp">--°C</div>
+    <div class="wh-desc" id="wh-desc">Loading live data…</div>
+    <div class="wh-meta">
+      <span id="wh-feels">Feels like --°C</span>
+      <span id="wh-humidity">💧 Humidity --%</span>
+      <span id="wh-wind">💨 Wind -- km/h</span>
+      <span id="wh-rain">🌧️ Rain --%</span>
+    </div>
+    <div class="wh-source">🛰️ Live data from Open-Meteo API · Malang, East Java (7.98°S, 112.63°E)</div>
+  </div>
+  <div class="card-grid"></div>
+    <div class="card"><h3>🌞 Dry Season (May–Oct)</h3><p>Best time to visit. Clear skies, lower humidity. Temperatures 18–28°C. Perfect for Bromo and outdoor activities.</p><span class="tag">Best Season</span></div>
+    <div class="card"><h3>🌧️ Wet Season (Nov–Apr)</h3><p>Afternoon showers daily. Morning usually clear. Lush green landscapes. Lower tourist crowds and hotel rates.</p><span class="tag">Budget Season</span></div>
+    <div class="card"><h3>🏔️ Mountain Areas (Bromo)</h3><p>Temperatures drop to 5–10°C at night near Bromo crater. Bring warm layers even in dry season.</p><span class="tag">Pack Warm</span></div>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: COSTUME ═══════ -->
+<div class="section" id="costume">
+  <h2 class="section-title">👕 What to Wear in Malang</h2>
+  <div class="card-grid">
+    <div class="card"><h3>☀️ City Exploration</h3><p>Light breathable clothing — cotton t-shirts, shorts or light trousers. Comfortable walking shoes. Sunglasses and hat essential.</p><span class="tag">Casual</span></div>
+    <div class="card"><h3>🕌 Temples & Mosques</h3><p>Cover shoulders and knees. Long trousers or skirt. Many sites provide sarongs for loan. Remove shoes before entering.</p><span class="tag">Respectful</span></div>
+    <div class="card"><h3>🏔️ Mount Bromo / Semeru</h3><p>Warm jacket or fleece essential — temperatures drop below 10°C at dawn. Gloves recommended. Sturdy hiking boots.</p><span class="tag">Warm Layers</span></div>
+    <div class="card"><h3>🌧️ Rainy Days</h3><p>Compact foldable rain jacket or poncho. Quick-dry clothing. Waterproof sandals useful. Most rain passes within 30–60 minutes.</p><span class="tag">Rain Ready</span></div>
+    <div class="card"><h3>🍽️ Restaurants & Malls</h3><p>Smart casual acceptable everywhere. Air conditioning in malls can be very cold — bring a light cardigan.</p><span class="tag">Smart Casual</span></div>
+    <div class="card"><h3>📸 Instagram Spots</h3><p>Malang's Kampung Warna-Warni and flower gardens are very popular. Bright colors photograph beautifully!</p><span class="tag">Colorful</span></div>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: EQUIPMENT ═══════ -->
+<div class="section" id="equipment">
+  <h2 class="section-title">🧳 Essential Equipment to Carry</h2>
+  <div class="card-grid">
+    <div class="card"><h3>📱 Smartphone</h3><p>Google Maps, Gojek, Grab, Google Translate offline. Keep fully charged. Bring powerbank.</p><span class="tag">Essential</span></div>
+    <div class="card"><h3>🔋 Powerbank</h3><p>Minimum 10,000mAh. Charging points not always available at tourist sites. Full day drains battery fast.</p><span class="tag">Essential</span></div>
+    <div class="card"><h3>💵 Cash (IDR)</h3><p>Many local warungs and markets don't accept cards. Carry Rp200,000–500,000 daily. BNI, BCA, Mandiri ATMs available.</p><span class="tag">Essential</span></div>
+    <div class="card"><h3>🌂 Compact Umbrella</h3><p>Afternoon rain showers can appear suddenly. A foldable umbrella fits any bag.</p><span class="tag">Recommended</span></div>
+    <div class="card"><h3>🧴 Sunscreen & Insect Repellent</h3><p>SPF 50+ for outdoor activities. DEET-based repellent for evening and jungle areas.</p><span class="tag">Health</span></div>
+    <div class="card"><h3>💊 Basic Medication</h3><p>Paracetamol, oral rehydration salts, antidiarrheal, antihistamine, antiseptic wipes. Pharmacies widespread.</p><span class="tag">Health</span></div>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: DESTINATIONS ═══════ -->
+<div class="section" id="destinations">
+  <h2 class="section-title">🗺️ Top Destinations in & Around Malang</h2>
+  <div class="card-grid">
+    <div class="card"><h3>🌋 Mount Bromo</h3><p>Indonesia's most iconic volcanic landscape. Sunrise from Penanjakan point is unforgettable. Book jeep tours the night before. 2 hours from Malang.</p><span class="tag gold">Must Visit</span></div>
+    <div class="card"><h3>🎨 Kampung Warna-Warni</h3><p>Jodipan & Ksatrian colorful villages along the Brantas River. Free to enter. Most photogenic spot in Malang city.</p><span class="tag">Instagram Spot</span></div>
+    <div class="card"><h3>🏛️ Singosari Temple</h3><p>13th century Hindu temple from the Singosari Kingdom. Free entry. Respectful dress required.</p><span class="tag">History</span></div>
+    <div class="card"><h3>🌸 Coban Rondo Waterfall</h3><p>Beautiful waterfall surrounded by pine forest, 30km northwest of Malang. Easy hiking trail. Entry ~Rp15,000.</p><span class="tag">Nature</span></div>
+    <div class="card"><h3>🏖️ Balekambang Beach</h3><p>Known as "Bali of Malang" — small Hindu temple on rocky island offshore. 65km south. Dramatic scenery.</p><span class="tag">Beach</span></div>
+    <div class="card"><h3>🍎 Batu Apple Orchards</h3><p>Malang region famous for apples and strawberries. Pick your own fruit at Agro Wisata farms in Batu.</p><span class="tag">Experience</span></div>
+    <div class="card"><h3>🏰 Alun-Alun Malang</h3><p>Central city square with Dutch colonial architecture, Grand Mosque, government buildings. Evening food vendors. Free.</p><span class="tag">City Center</span></div>
+    <div class="card"><h3>🦁 Jatim Park 1, 2 & 3</h3><p>Three world-class theme parks in Batu — science museum, wildlife park, and water park. Book tickets online for discounts.</p><span class="tag">Family</span></div>
+    <div class="card"><h3>🌺 Selecta Recreation Park</h3><p>Colonial-era flower garden and recreation park in Batu city. Beautiful rose gardens. Entry ~Rp35,000.</p><span class="tag">Family</span></div>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: PRICES ═══════ -->
+<div class="section" id="prices">
+  <h2 class="section-title">💰 Price Guide</h2>
+  <table class="price-table" style="margin-bottom:24px;">
+    <thead><tr><th>Item</th><th>Budget (IDR)</th><th>Mid-Range (IDR)</th><th>Comfort (IDR)</th></tr></thead>
+    <tbody>
+      <tr><td>🏨 Hotel per night</td><td>Rp150,000–300,000</td><td>Rp400,000–800,000</td><td>Rp1,000,000+</td></tr>
+      <tr><td>🍜 Local meal (warung)</td><td>Rp15,000–30,000</td><td>Rp50,000–100,000</td><td>Rp150,000+</td></tr>
+      <tr><td>🚗 Gojek / Grab ride</td><td>Rp10,000–25,000</td><td>Rp30,000–60,000</td><td>Rp80,000+</td></tr>
+      <tr><td>🌋 Bromo jeep tour</td><td>Rp350,000/person</td><td>Rp500,000/person</td><td>Rp800,000+</td></tr>
+      <tr><td>🎢 Jatim Park entry</td><td>—</td><td>Rp100,000–150,000</td><td>Rp200,000</td></tr>
+      <tr><td>🚐 Malang–Bromo transport</td><td>Rp80,000 (bus)</td><td>Rp200,000 (shared)</td><td>Rp500,000 (private)</td></tr>
+      <tr><td>☕ Café / coffee</td><td>Rp15,000–25,000</td><td>Rp35,000–60,000</td><td>Rp80,000+</td></tr>
+      <tr><td>🛒 Souvenirs</td><td>Rp20,000–50,000</td><td>Rp75,000–200,000</td><td>Rp300,000+</td></tr>
+    </tbody>
+  </table>
+  <div class="card-grid">
+    <div class="card">
+      <h3>📅 Daily Budget Estimate</h3>
+      <p><strong>Budget traveler:</strong> Rp500,000–700,000/day<br><strong>Mid-range:</strong> Rp1,000,000–1,500,000/day<br><strong>Comfort:</strong> Rp2,000,000+/day</p>
+      <span class="tag">Per Person</span>
+    </div>
+    <div class="card">
+      <h3>💱 Quick Exchange</h3>
+      <p>Use the <strong>Currency tab</strong> for live rates! Approximate: Rp15,000 ≈ $1 USD · Rp17,000 ≈ €1 EUR · Rp19,000 ≈ £1 GBP</p>
+      <span class="tag">Live Rates Available</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: CURRENCY CONVERTER ═══════ -->
+<div class="section" id="currency">
+  <h2 class="section-title">💱 Live Currency Converter</h2>
+  <div class="converter-box">
+    <h3>Convert to Indonesian Rupiah</h3>
+    <div class="converter-row">
+      <input type="number" id="convAmount" value="100" min="0" placeholder="Amount">
+      <select id="convFrom">
+        <option value="USD">🇺🇸 USD — US Dollar</option>
+        <option value="EUR">🇪🇺 EUR — Euro</option>
+        <option value="GBP">🇬🇧 GBP — British Pound</option>
+        <option value="AUD">🇦🇺 AUD — Australian Dollar</option>
+        <option value="SGD">🇸🇬 SGD — Singapore Dollar</option>
+        <option value="MYR">🇲🇾 MYR — Malaysian Ringgit</option>
+        <option value="JPY">🇯🇵 JPY — Japanese Yen</option>
+        <option value="KRW">🇰🇷 KRW — South Korean Won</option>
+        <option value="NOK">🇳🇴 NOK — Norwegian Krone</option>
+        <option value="SAR">🇸🇦 SAR — Saudi Riyal</option>
+        <option value="AED">🇦🇪 AED — UAE Dirham</option>
+      </select>
+      <button class="btn-convert" onclick="convertCurrency()">Convert →</button>
+    </div>
+    <div class="converter-result" id="convResult">
+      Enter an amount and click Convert
+      <small id="convRate"></small>
+    </div>
+    <p class="rate-note">📡 Live rates via Open Exchange Rates · Updates every 30 min · For reference only</p>
+  </div>
+
+  <!-- Reverse: IDR to foreign -->
+  <div class="converter-box" style="margin-top: 20px;">
+    <h3>Convert from Indonesian Rupiah</h3>
+    <div class="converter-row">
+      <input type="number" id="convIDR" value="500000" min="0" placeholder="IDR Amount">
+      <select id="convTo">
+        <option value="USD">🇺🇸 USD</option>
+        <option value="EUR">🇪🇺 EUR</option>
+        <option value="GBP">🇬🇧 GBP</option>
+        <option value="AUD">🇦🇺 AUD</option>
+        <option value="SGD">🇸🇬 SGD</option>
+        <option value="MYR">🇲🇾 MYR</option>
+        <option value="JPY">🇯🇵 JPY</option>
+        <option value="KRW">🇰🇷 KRW</option>
+        <option value="NOK">🇳🇴 NOK</option>
+        <option value="SAR">🇸🇦 SAR</option>
+        <option value="AED">🇦🇪 AED</option>
+      </select>
+      <button class="btn-convert" onclick="convertFromIDR()">Convert →</button>
+    </div>
+    <div class="converter-result" id="convResultIDR">
+      Enter an amount and click Convert
+      <small id="convRateIDR"></small>
+    </div>
+    <p class="rate-note">📡 Live rates via Open Exchange Rates · For reference only, not financial advice</p>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: HOTELS (Booking.com Affiliate) ═══════ -->
+<div class="section" id="hotels">
+  <h2 class="section-title">🏨 Book Hotels in Malang</h2>
+
+  <div class="commission-box">
+    <h3>💰 Earn Commission on Every Booking</h3>
+    <p style="font-size:0.88rem; color:#666; margin-bottom:14px;">Sign up free at <a href="https://partners.booking.com" target="_blank" style="color:var(--jade); font-weight:600;">partners.booking.com</a> — replace the affiliate links below with your ID to start earning.</p>
+    <div class="commission-grid">
+      <div class="comm-item"><div class="comm-pct">25%</div><div class="comm-label">Booking.com commission on each booking</div></div>
+      <div class="comm-item"><div class="comm-pct">8%</div><div class="comm-label">Agoda affiliate commission rate</div></div>
+      <div class="comm-item"><div class="comm-pct">Free</div><div class="comm-label">Sign up — no fee to join affiliate programs</div></div>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="affiliate-card">
+      <div class="hotel-name">Hotel Tugu Malang</div>
+      <div class="hotel-stars">★★★★★</div>
+      <div class="hotel-price">From Rp1,800,000/night</div>
+      <div class="hotel-desc">Iconic luxury hotel with colonial art collection. Award-winning restaurant. Central location near Alun-Alun.</div>
+      <!-- Replace 2840156 with your Booking.com affiliate ID -->
+      <a class="btn-book gold-btn" href="https://www.booking.com/hotel/id/tugu-malang.html?aid=2840156&label=malang-guide" target="_blank">📖 Book on Booking.com</a>
+      <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
+    </div>
+    <div class="affiliate-card">
+      <div class="hotel-name">Atria Hotel Malang</div>
+      <div class="hotel-stars">★★★★</div>
+      <div class="hotel-price">From Rp700,000/night</div>
+      <div class="hotel-desc">Modern business hotel near Malang Town Square. Rooftop pool, gym, excellent breakfast buffet.</div>
+      <a class="btn-book gold-btn" href="https://www.booking.com/hotel/id/atria-malang.html?aid=2840156&label=malang-guide" target="_blank">📖 Book on Booking.com</a>
+      <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
+    </div>
+    <div class="affiliate-card">
+      <div class="hotel-name">The Singhasari Resort (Batu)</div>
+      <div class="hotel-stars">★★★★★</div>
+      <div class="hotel-price">From Rp2,500,000/night</div>
+      <div class="hotel-desc">Mountain resort near Batu. Stunning views, multiple pools, spa. Themed on ancient Singosari Kingdom.</div>
+      <a class="btn-book gold-btn" href="https://www.booking.com/hotel/id/the-singhasari-resort.html?aid=2840156&label=malang-guide" target="_blank">📖 Book on Booking.com</a>
+      <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
+    </div>
+    <div class="affiliate-card">
+      <div class="hotel-name">Helios Hotel Malang</div>
+      <div class="hotel-stars">★★★</div>
+      <div class="hotel-price">From Rp250,000/night</div>
+      <div class="hotel-desc">Best value mid-range. Clean, central, friendly staff. Walking distance to Jl. Ijen. Popular with backpackers.</div>
+      <a class="btn-book" href="https://www.booking.com/hotel/id/helios-malang.html?aid=2840156&label=malang-guide" target="_blank">📖 Book on Booking.com</a>
+      <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
+    </div>
+    <div class="affiliate-card">
+      <div class="hotel-name">Search All Malang Hotels</div>
+      <div class="hotel-stars">⭐ Best Deals</div>
+      <div class="hotel-price">Compare 200+ properties</div>
+      <div class="hotel-desc">See all available hotels, guesthouses, and villas in Malang with real-time pricing and availability.</div>
+      <a class="btn-book gold-btn" href="https://www.booking.com/searchresults.html?city=-2363165&aid=2840156&label=malang-guide" target="_blank">🔍 Search All Hotels</a>
+      <a class="btn-book" href="https://www.agoda.com/search?city=17371&tag=2840156" target="_blank" style="margin-top:6px;">🔍 Search on Agoda</a>
+      <p class="affiliate-disclaimer">* Affiliate links — we may earn a small commission at no extra cost to you</p>
+    </div>
+    <div class="affiliate-card">
+      <div class="hotel-name">Near Mount Bromo</div>
+      <div class="hotel-stars">🌋 Best Sunrise Access</div>
+      <div class="hotel-price">From Rp400,000/night</div>
+      <div class="hotel-desc">Stay in Cemoro Lawang village for best Bromo sunrise access. Cold nights — ensure room has hot water.</div>
+      <a class="btn-book gold-btn" href="https://www.booking.com/searchresults.html?ss=Cemoro+Lawang&aid=2840156&label=malang-guide" target="_blank">📖 Find Bromo Hotels</a>
+      <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: TOURS (GetYourGuide / Klook Affiliate) ═══════ -->
+<div class="section" id="tours">
+  <h2 class="section-title">🎫 Book Tours & Experiences</h2>
+
+  <div class="commission-box">
+    <h3>🤝 Tour Affiliate Programs</h3>
+    <p style="font-size:0.88rem; color:#666; margin-bottom:14px;">Sign up free and replace affiliate IDs in the links below.</p>
+    <div class="commission-grid">
+      <div class="comm-item"><div class="comm-pct">8%</div><div class="comm-label">GetYourGuide — <a href="https://partner.getyourguide.com" target="_blank" style="color:var(--jade);">partner.getyourguide.com</a></div></div>
+      <div class="comm-item"><div class="comm-pct">5%</div><div class="comm-label">Klook — <a href="https://affiliate.klook.com" target="_blank" style="color:var(--jade);">affiliate.klook.com</a></div></div>
+      <div class="comm-item"><div class="comm-pct">Direct</div><div class="comm-label">Accept direct bookings via WhatsApp + take 15–20% fee</div></div>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="tour-card">
+      <div class="tour-img-placeholder">🌋</div>
+      <div class="tour-body">
+        <h3>Mount Bromo Sunrise Jeep Tour</h3>
+        <p>Watch the sunrise from Penanjakan viewpoint, then drive through the Sea of Sand to the crater rim.</p>
+        <div class="tour-meta">
+          <span class="tour-price">From Rp350,000/person</span>
+          <span class="tour-rating">★★★★★ 4.9</span>
+        </div>
+        <!-- Replace partner_id with your GetYourGuide ID -->
+        <a class="btn-book gold-btn" href="https://www.getyourguide.com/mount-bromo-l97438/?partner_id=2840156" target="_blank">📅 Book via GetYourGuide</a>
+        <a class="btn-book" href="https://www.klook.com/activity/3893-mount-bromo-sunrise-tour/?aid=https://affiliate.klook.com/redirect?aid=118558&aff_adid=1256008&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" style="margin-top:6px;">📅 Book via Klook</a>
+        <p class="affiliate-disclaimer">* Affiliate links</p>
+      </div>
+    </div>
+    <div class="tour-card">
+      <div class="tour-img-placeholder">🎨</div>
+      <div class="tour-body">
+        <h3>Malang City Heritage Walking Tour</h3>
+        <p>Dutch colonial architecture, colorful villages, traditional markets, and local street food tasting.</p>
+        <div class="tour-meta">
+          <span class="tour-price">From Rp200,000/person</span>
+          <span class="tour-rating">★★★★★ 4.8</span>
+        </div>
+        <a class="btn-book gold-btn" href="https://www.getyourguide.com/malang-l97437/?partner_id=2840156" target="_blank">📅 Book via GetYourGuide</a>
+        <p class="affiliate-disclaimer">* Affiliate link</p>
+      </div>
+    </div>
+    <div class="tour-card">
+      <div class="tour-img-placeholder">🍜</div>
+      <div class="tour-body">
+        <h3>Malang Food Tour — Local Flavors</h3>
+        <p>Taste bakso, rawon, rujak cingur and other Malang specialties with a knowledgeable local guide.</p>
+        <div class="tour-meta">
+          <span class="tour-price">From Rp250,000/person</span>
+          <span class="tour-rating">★★★★★ 4.7</span>
+        </div>
+        <a class="btn-book gold-btn" href="https://www.getyourguide.com/malang-l97437/?partner_id=2840156&q=food+tour" target="_blank">📅 Book via GetYourGuide</a>
+        <p class="affiliate-disclaimer">* Affiliate link</p>
+      </div>
+    </div> 
+    <div class="tour-card">
+      <div class="tour-img-placeholder">🏊</div>
+      <div class="tour-body">
+        <h3>Sempu Island Day Trip</h3>
+        <p>Trek through protected rainforest to the legendary Segara Anakan lagoon. A hidden gem near Malang.</p>
+        <div class="tour-meta">
+          <span class="tour-price">From Rp450,000/person</span>
+          <span class="tour-rating">★★★★☆ 4.6</span>
+        </div>
+        <a class="btn-book gold-btn" href="https://www.getyourguide.com/malang-l97437/?partner_id=2840156&q=sempu" target="_blank">📅 Book via GetYourGuide</a>
+        <p class="affiliate-disclaimer">* Affiliate link</p>
+      </div>
+    </div>
+
+    <!-- DIRECT BOOKING CARD -->
+    <div class="tour-card" style="border: 2px solid var(--gold);">
+      <div class="tour-img-placeholder" style="background: linear-gradient(135deg, var(--gold), var(--amber));">💬</div>
+      <div class="tour-body">
+        <h3>Book Direct via WhatsApp</h3>
+        <p>Custom tours, private Bromo trips, airport transfers. Contact us directly for the best prices and personalized itineraries.</p>
+        <div class="tour-meta">
+          <span class="tour-price">Best Price Guarantee</span>
+          <span class="tour-rating">✅ Fast Response</span>
+        </div>
+        <a class="btn-book gold-btn" href="https://wa.me/6281250900387?text=Hi!%20I%20found%20your%20Malang%20Travel%20Guide%20and%20I%27d%20like%20to%20book%20a%20tour." target="_blank">💬 WhatsApp Us Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: TRANSPORT ═══════ -->
+<div class="section" id="transport">
+  <h2 class="section-title">🚗 Getting Around Malang</h2>
+  <div class="card-grid">
+    <div class="transport-card"><h3>🛵 Gojek / Grab</h3><p>Most convenient option. Book via app — motorbike (GoRide) or car (GoCar). Clear pricing, no haggling. Download before arriving.</p><div class="price-badge">Rp10,000–60,000 typical ride</div></div>
+    <div class="transport-card"><h3>🚐 Angkot (Minibus)</h3><p>Local shared minibuses connecting all areas. Very cheap but routes can be confusing. Ask locals for help.</p><div class="price-badge">Rp4,000–7,000 per journey</div></div>
+    <div class="transport-card"><h3>🚕 Blue Bird Taxi</h3><p>Metered taxis — reliable and safe. Blue Bird is the most trusted brand in Indonesia. Good for airport transfers.</p><div class="price-badge">Meter starts Rp7,500</div></div>
+    <div class="transport-card"><h3>🚗 Car Rental + Driver</h3><p>Best option for Bromo and day trips outside city. Arrange through hotel or trusted local travel agents.</p><div class="price-badge">Rp400,000–700,000/day</div></div>
+    <div class="transport-card"><h3>🚂 Train</h3><p>Malang connects to Surabaya (2h), Yogyakarta (7h), Jakarta (15h). Book via KAI Access app. Comfortable AC trains.</p><div class="price-badge">Rp80,000–450,000</div></div>
+    <div class="transport-card"><h3>✈️ Airport (ABD Saleh)</h3><p>Domestic flights to Jakarta, Bali, Makassar. 18km from city center. Taxis and Grab available outside arrivals.</p><div class="price-badge">Taxi: Rp80,000–120,000</div></div>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: EMERGENCY ═══════ -->
+<div class="section" id="emergency">
+  <h2 class="section-title">🚨 Emergency Contacts & Nearest Services</h2>
+
+  <div style="background:#fff3cd; border:1px solid #ffc107; border-radius:12px; padding:16px; margin-bottom:24px; font-size:0.9rem;">
+    ⚠️ <strong>Save these numbers before exploring.</strong> Indonesian national emergency: <strong>112</strong> (all services).
+  </div>
+
+  <div class="emergency-grid">
+    <div class="emergency-card"><div class="emergency-icon">🆘</div><div class="emergency-info"><h4>National Emergency</h4><p>All services — Police/Fire/Medical</p><a href="tel:112">📞 112</a></div></div>
+    <div class="emergency-card"><div class="emergency-icon">🚔</div><div class="emergency-info"><h4>Police (Polisi)</h4><p>National emergency</p><a href="tel:110">📞 110</a></div></div>
+    <div class="emergency-card"><div class="emergency-icon">🚑</div><div class="emergency-info"><h4>Ambulance</h4><p>Emergency Medical Services</p><a href="tel:118">📞 118 / 119</a></div></div>
+    <div class="emergency-card"><div class="emergency-icon">🚒</div><div class="emergency-info"><h4>Fire Brigade</h4><p>Dinas Pemadam Kebakaran</p><a href="tel:113">📞 113</a></div></div>
+  </div>
+
+  <!-- NEAREST HOSPITALS -->
+  <div class="emergency-section">
+    <h3>🏥 Nearest Hospitals to Central Malang</h3>
+    <div class="nearby-places-grid" id="nearbyHospitals">
+      <div class="nearby-card hosp">
+        <h4>RSUD Dr. Saiful Anwar (RSSA)</h4>
+        <p>Jl. Jaksa Agung Suprapto No.2, Malang</p>
+        <p>Main government hospital — 24hr emergency</p>
+        <a href="tel:+62341362101" style="color:var(--red); font-weight:600;">📞 (0341) 362-101</a><br>
+        <div class="dist-badge">~1.2 km from Alun-Alun</div><br>
+        <a class="map-link" href="https://maps.google.com/?q=RSSA+Malang" target="_blank">🗺️ Open in Google Maps</a>
+      </div>
+      <div class="nearby-card hosp">
+        <h4>RS Lavalette Malang</h4>
+        <p>Jl. W.R. Supratman No.10, Malang</p>
+        <p>Private hospital — English-speaking staff available</p>
+        <a href="tel:+62341408832" style="color:var(--red); font-weight:600;">📞 (0341) 408-832</a><br>
+        <div class="dist-badge">~2.0 km from city center</div><br>
+        <a class="map-link" href="https://maps.google.com/?q=RS+Lavalette+Malang" target="_blank">🗺️ Open in Google Maps</a>
+      </div>
+      <div class="nearby-card hosp">
+        <h4>RS Panti Nirmala</h4>
+        <p>Jl. Kebalen Wetan No.2-8, Malang</p>
+        <p>Catholic hospital — well-regarded for tourist care</p>
+        <a href="tel:+62341362459" style="color:var(--red); font-weight:600;">📞 (0341) 362-459</a><br>
+        <div class="dist-badge">~1.5 km from city center</div><br>
+        <a class="map-link" href="https://maps.google.com/?q=RS+Panti+Nirmala+Malang" target="_blank">🗺️ Open in Google Maps</a>
+      </div>
+      <div class="nearby-card hosp">
+        <h4>RS Hermina Tangkuban Perahu</h4>
+        <p>Jl. Tangkuban Perahu No.33, Malang</p>
+        <p>Modern private hospital — fast emergency response</p>
+        <a href="tel:+62341355500" style="color:var(--red); font-weight:600;">📞 (0341) 355-500</a><br>
+        <div class="dist-badge">~2.5 km from city center</div><br>
+        <a class="map-link" href="https://maps.google.com/?q=RS+Hermina+Malang" target="_blank">🗺️ Open in Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEAREST POLICE STATIONS -->
+  <div class="emergency-section" style="margin-top:28px;">
+    <h3>👮 Nearest Police Stations to Central Malang</h3>
+    <div class="nearby-places-grid">
+      <div class="nearby-card police">
+        <h4>Polresta Malang Kota (Central)</h4>
+        <p>Jl. Jaksa Agung Suprapto No.19, Malang</p>
+        <p>Main city police headquarters</p>
+        <a href="tel:+62341362110" style="color:var(--blue); font-weight:600;">📞 (0341) 362-110</a><br>
+        <div class="dist-badge">~1.0 km from Alun-Alun</div><br>
+        <a class="map-link" href="https://maps.google.com/?q=Polresta+Malang+Kota" target="_blank">🗺️ Open in Google Maps</a>
+      </div>
+      <div class="nearby-card police">
+        <h4>Tourist Police Post</h4>
+        <p>Alun-Alun Malang (City Center Square)</p>
+        <p>For tourist incidents, theft, and guidance</p>
+        <a href="tel:+62341321376" style="color:var(--blue); font-weight:600;">📞 (0341) 321-376</a><br>
+        <div class="dist-badge">At Alun-Alun</div><br>
+        <a class="map-link" href="https://maps.google.com/?q=Alun-Alun+Malang" target="_blank">🗺️ Open in Google Maps</a>
+      </div>
+      <div class="nearby-card police">
+        <h4>Polsek Klojen (Downtown)</h4>
+        <p>Jl. Merdeka Timur No.7, Malang</p>
+        <p>Sub-district police — handles tourist area</p>
+        <a href="tel:+62341362037" style="color:var(--blue); font-weight:600;">📞 (0341) 362-037</a><br>
+        <div class="dist-badge">~0.5 km from Alun-Alun</div><br>
+        <a class="map-link" href="https://maps.google.com/?q=Polsek+Klojen+Malang" target="_blank">🗺️ Open in Google Maps</a>
+      </div>
+      <div class="nearby-card police">
+        <h4>Polsek Lowokwaru (North)</h4>
+        <p>Jl. Sudimoro No.1, Malang</p>
+        <p>Near Universitas Brawijaya area</p>
+        <a href="tel:+62341554210" style="color:var(--blue); font-weight:600;">📞 (0341) 554-210</a><br>
+        <div class="dist-badge">~3.5 km from city center</div><br>
+        <a class="map-link" href="https://maps.google.com/?q=Polsek+Lowokwaru+Malang" target="_blank">🗺️ Open in Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-container" style="margin-top:24px;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15766.4!2d112.6149!3d-7.9797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6278a3dd5dfb9%3A0x6d624a7f5fafe9b0!2sRSUD%20Dr.%20Saiful%20Anwar!5e0!3m2!1sen!2s!4v1" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: DO'S & DON'TS ═══════ -->
+<div class="section" id="dodont">
+  <h2 class="section-title">📋 Do's & Don'ts in Malang</h2>
+  <div class="do-dont">
+    <div class="do-list">
+      <h3>✅ Do's</h3>
+      <ul>
+        <li>Greet locals with "Selamat pagi/siang/sore"</li>
+        <li>Remove shoes before entering homes and mosques</li>
+        <li>Use right hand to give/receive money and food</li>
+        <li>Dress modestly when visiting religious sites</li>
+        <li>Bargain politely at traditional markets</li>
+        <li>Try local street food — bakso, rawon, rujak cingur</li>
+        <li>Download Gojek and Grab apps before arriving</li>
+        <li>Carry small denomination IDR cash</li>
+        <li>Book Bromo jeep tours the evening before</li>
+        <li>Respect Friday prayer times (12–1pm) near mosques</li>
+        <li>Ask permission before photographing people</li>
+        <li>Stay hydrated — tropical heat is deceptive</li>
+      </ul>
+    </div>
+    <div class="dont-list">
+      <h3>❌ Don'ts</h3>
+      <ul>
+        <li>Don't use left hand for eating or giving items</li>
+        <li>Don't touch someone's head — considered sacred</li>
+        <li>Don't point with index finger — use thumb instead</li>
+        <li>Don't raise your voice or show anger publicly</li>
+        <li>Don't wear revealing clothing at temples</li>
+        <li>Don't drink tap water — bottled water only</li>
+        <li>Don't accept unofficial taxis without fixed price</li>
+        <li>Don't ignore motorcycle traffic — roads can be chaotic</li>
+        <li>Don't litter — significant fines apply</li>
+        <li>Don't photograph military/police facilities</li>
+        <li>Don't disrespect the call to prayer (Adzan)</li>
+        <li>Don't ignore entrance fees at temples</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: MARKETS ═══════ -->
+<div class="section" id="market">
+  <h2 class="section-title">🛒 Traditional Markets & Shopping</h2>
+  <div class="card-grid">
+    <div class="card"><h3>🏪 Pasar Besar Malang</h3><p>Main traditional market. Fresh produce, spices, local snacks, batik fabrics. Opens 5am–5pm. Lively and authentic.</p><span class="tag">City Center</span></div>
+    <div class="card"><h3>🌺 Pasar Bunga (Flower Market)</h3><p>One of East Java's largest flower markets. Best visited early morning for freshest stock. Jl. Kyai Tamin area.</p><span class="tag">Unique</span></div>
+    <div class="card"><h3>🍎 Pasar Batu (Batu City)</h3><p>Famous for fresh apples, strawberries and vegetables from the highlands. Best prices for Malang's famous produce.</p><span class="tag">Fresh Produce</span></div>
+    <div class="card"><h3>🎨 Pasar Seni Gajahmada</h3><p>Art and souvenir market. Local handicrafts, batik clothing, Malang traditional masks (Topeng Malang). Great for gifts.</p><span class="tag">Souvenirs</span></div>
+    <div class="card"><h3>🦐 Pasar Ikan (Fish Market)</h3><p>Fresh seafood market. Restaurants nearby will cook your purchases. Best visited in the morning.</p><span class="tag">Seafood</span></div>
+    <div class="card"><h3>🏬 Malang Town Square (MATOS)</h3><p>Modern shopping mall. Branded goods, cinema, food court. Air conditioned comfort. Grab/Gojek friendly.</p><span class="tag">Modern Mall</span></div>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: MAP ═══════ -->
+<div class="section" id="map">
+  <h2 class="section-title">📍 Malang City Map</h2>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126131.32996785!2d112.5709!3d-7.9831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd627c0c4a3f565%3A0x2d4e3f48a4e70d!2sMalang%2C%20East%20Java%2C%20Indonesia!5e0!3m2!1sen!2s!4v1" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <div class="card-grid">
+    <div class="card"><h3>📍 City Center</h3><p>Alun-Alun Malang, Jl. Ijen Boulevard, Pasar Besar. Main hub for food, shopping and colonial architecture.</p></div>
+    <div class="card"><h3>🏔️ Batu City (30 min)</h3><p>Apple orchards, theme parks, flower gardens, paragliding. Day trip from Malang.</p></div>
+    <div class="card"><h3>🌋 Bromo (2 hrs)</h3><p>Head east via Tumpang or Probolinggo. Book jeep tours from Malang for convenience.</p></div>
+  </div>
+</div>
+
+<!-- ═══════ SECTION: PAID LISTINGS ═══════ -->
+<div class="section" id="listings">
+  <h2 class="section-title">⭐ Featured Businesses in Malang</h2>
+
+  <div class="card-grid" style="margin-bottom:30px;">
+    <div class="listing-card">
+      <div class="featured-badge">★ FEATURED</div>
+      <h3>Your Business Name Here</h3>
+      <p>This is a sample paid listing. Local hotels, restaurants, tour operators and shops can pay to be featured here with their description, contact details, and a direct link to their website or WhatsApp.</p>
+      <a href="#" style="color:var(--jade); font-size:0.85rem; font-weight:600;">🌐 Visit Website →</a>
+    </div>
+    <div class="listing-card">
+      <div class="featured-badge">★ FEATURED</div>
+      <h3>Advertise Your Business</h3>
+      <p>Get featured on this Malang travel guide and reach thousands of tourists planning their visit. Fill in the form below to enquire about listing packages.</p>
+      <a href="#listingForm" style="color:var(--jade); font-size:0.85rem; font-weight:600;">📋 Apply for Listing →</a>
+    </div>
+  </div>
+
+  <!-- PAID LISTING FORM -->
+  <div class="listing-form" id="listingForm">
+    <h3>📋 Apply for a Featured Listing</h3>
+    <p>Get your business in front of thousands of tourists visiting Malang. Fill in the form below and we'll contact you within 24 hours.</p>
+
+    <div style="margin-bottom:20px;">
+      <p style="font-size:0.85rem; margin-bottom:12px; opacity:0.9;">Select your listing package:</p>
+      <div class="pricing-tiers">
+        <div class="tier-card selected" onclick="selectTier(this, 'basic')">
+          <div class="tier-price">Rp300K</div>
+          <div class="tier-name">Basic</div>
+          <div class="tier-desc">1 month · Text listing · WhatsApp link</div>
+        </div>
+        <div class="tier-card" onclick="selectTier(this, 'standard')">
+          <div class="tier-price">Rp600K</div>
+          <div class="tier-name">Standard</div>
+          <div class="tier-desc">3 months · Photo + description · Website link</div>
+        </div>
+        <div class="tier-card" onclick="selectTier(this, 'premium')">
+          <div class="tier-price">Rp1.2M</div>
+          <div class="tier-name">Premium</div>
+          <div class="tier-desc">6 months · Top placement · Social media mention</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <input type="text" id="bizName" placeholder="Business Name *" required>
+      <input type="text" id="bizType" placeholder="Type (Hotel / Restaurant / Tour / Shop)">
+    </div>
+    <div class="form-row">
+      <input type="text" id="bizContact" placeholder="WhatsApp Number *" required>
+      <input type="email" id="bizEmail" placeholder="Email Address">
+    </div>
+    <div class="form-row single">
+      <input type="text" id="bizAddress" placeholder="Business Address in Malang">
+    </div>
+    <div class="form-row single">
+      <textarea id="bizDesc" placeholder="Tell us about your business (max 200 words)..."></textarea>
+    </div>
+    <input type="hidden" id="selectedTier" value="basic">
+    <button class="btn-submit" onclick="submitListing()">📩 Send Enquiry via WhatsApp</button>
+    <div class="form-success" id="listingSuccess">✅ Opening WhatsApp with your enquiry details! We'll respond within 24 hours.</div>
+  </div>
+</div>
+
+<!-- ═══════ SCROLL TOP ═══════ -->
+<button id="scrollTop" onclick="scrollToTop()">↑</button>
+
+<style>
+:root {
+  --forest: #1a3a2a;
+  --jade: #2d6a4f;
+  --mint: #52b788;
+  --gold: #d4a017;
+  --amber: #f59e0b;
+  --cream: #fdf6e3;
+  --warm: #f4e4c1;
+  --text: #1a1a1a;
+  --white: #ffffff;
+  --red: #e74c3c;
+  --blue: #2980b9;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ── HERO ───────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  background: linear-gradient(135deg, #1a3a2a 0%, #2d6a4f 40%, #52b788 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=1600&q=80') center/cover no-repeat;
+  opacity: 0.55;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(26,58,42,0.3) 0%, rgba(26,58,42,0.1) 40%, rgba(26,58,42,0.8) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 80px; height: 80px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; color: var(--forest); font-weight: 900;
+  box-shadow: 0 0 30px rgba(212,160,23,0.5);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 30px rgba(212,160,23,0.5); }
+  50% { box-shadow: 0 0 60px rgba(212,160,23,0.8); }
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  color: var(--white); line-height: 1.1;
+  letter-spacing: -1px; margin-bottom: 10px;
+}
+.hero h1 span { color: var(--gold); }
+.hero p { font-size: clamp(1rem, 2.5vw, 1.3rem); color: rgba(255,255,255,0.85); margin-bottom: 30px; font-weight: 300; }
+
+/* ── CLOCK ──────────────────────────────────────── */
+.clock-bar {
+  position: absolute; top: 20px; right: 20px; z-index: 10;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px; padding: 10px 18px;
+  color: white; text-align: right;
+}
+.clock-time { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold); }
+.clock-date { font-size: 0.75rem; opacity: 0.8; margin-top: 2px; }
+
+/* ── LANG BAR ───────────────────────────────────── */
+.lang-bar { position: absolute; top: 20px; left: 20px; z-index: 10; display: flex; gap: 8px; flex-wrap: wrap; }
+.lang-btn {
+  background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2); border-radius: 8px;
+  padding: 6px 12px; color: white; font-size: 0.75rem;
+  cursor: pointer; transition: all 0.3s; font-family: 'DM Sans', sans-serif;
+}
+.lang-btn:hover, .lang-btn.active { background: var(--gold); color: var(--forest); border-color: var(--gold); font-weight: 600; }
+
+/* ── LIVE WEATHER STRIP ─────────────────────────── */
+.weather-strip {
+  background: linear-gradient(135deg, var(--jade), var(--mint));
+  color: white; padding: 14px 20px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 30px; flex-wrap: wrap; font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(45,106,79,0.3);
+}
+.weather-strip .witem { display: flex; align-items: center; gap: 6px; }
+.weather-strip .wtemp { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; }
+.weather-strip .wlabel { opacity: 0.85; }
+.weather-loading { opacity: 0.7; font-style: italic; }
+
+/* ── CURRENCY TICKER ────────────────────────────── */
+.currency-ticker {
+  background: var(--forest); color: var(--gold);
+  padding: 10px 20px; font-size: 0.82rem;
+  display: flex; align-items: center; justify-content: center;
+  gap: 24px; flex-wrap: wrap; letter-spacing: 0.3px;
+}
+.currency-ticker strong { color: white; margin-right: 4px; }
+.currency-ticker .tick-label { color: rgba(255,255,255,0.5); font-size: 0.75rem; margin-right: 8px; }
+
+/* ── ADSENSE PLACEHOLDER ────────────────────────── */
+.adsense-slot {
+  background: repeating-linear-gradient(45deg, #f9f3e3, #f9f3e3 10px, #fdf6e3 10px, #fdf6e3 20px);
+  border: 2px dashed var(--gold); border-radius: 8px;
+  text-align: center; padding: 18px; margin: 16px 20px;
+  font-size: 0.8rem; color: #999; font-style: italic;
+}
+.adsense-slot strong { display: block; color: var(--jade); font-style: normal; font-size: 0.85rem; margin-bottom: 4px; }
+
+/* ── NAV GRID ───────────────────────────────────── */
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px; padding: 32px 20px;
+  max-width: 1200px; margin: 0 auto;
+}
+.nav-btn {
+  background: var(--white); border: 2px solid transparent;
+  border-radius: 16px; padding: 18px 12px;
+  text-align: center; cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.nav-btn:hover { border-color: var(--jade); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(45,106,79,0.2); }
+.nav-btn.active { background: var(--jade); color: white; border-color: var(--jade); }
+.nav-btn .icon { font-size: 1.8rem; margin-bottom: 6px; }
+.nav-btn .label { font-size: 0.78rem; font-weight: 500; line-height: 1.3; }
+
+/* ── SECTIONS ───────────────────────────────────── */
+.section { display: none; max-width: 1200px; margin: 0 auto; padding: 20px 20px 60px; animation: fadeIn 0.4s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--forest); margin-bottom: 28px;
+  padding-bottom: 14px; border-bottom: 3px solid var(--gold);
+}
+
+/* ── CARDS ──────────────────────────────────────── */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.card {
+  background: white; border-radius: 16px; padding: 22px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--jade); transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-4px); }
+.card h3 { font-family: 'Playfair Display', serif; color: var(--forest); margin-bottom: 9px; font-size: 1.15rem; }
+.card p { font-size: 0.88rem; color: #555; line-height: 1.65; }
+.card .tag { display: inline-block; background: var(--mint); color: var(--forest); border-radius: 6px; padding: 3px 10px; font-size: 0.72rem; margin-top: 10px; font-weight: 600; }
+.card .tag.gold { background: var(--gold); }
+.card .tag.red { background: #ffe0e0; color: var(--red); }
+
+/* ── AFFILIATE / BOOKING CARD ───────────────────── */
+.affiliate-card {
+  background: white; border-radius: 16px; padding: 22px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-top: 4px solid var(--gold);
+  transition: transform 0.3s;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.affiliate-card:hover { transform: translateY(-4px); }
+.affiliate-card .hotel-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--forest); }
+.affiliate-card .hotel-stars { color: var(--gold); }
+.affiliate-card .hotel-price { font-weight: 600; color: var(--jade); font-size: 0.95rem; }
+.affiliate-card .hotel-desc { font-size: 0.84rem; color: #555; line-height: 1.55; }
+.btn-book {
+  display: inline-block; margin-top: 6px;
+  background: var(--jade); color: white;
+  padding: 9px 18px; border-radius: 8px;
+  font-size: 0.85rem; font-weight: 600;
+  text-decoration: none; text-align: center;
+  transition: background 0.2s;
+}
+.btn-book:hover { background: var(--forest); }
+.btn-book.gold-btn { background: var(--gold); color: var(--forest); }
+.btn-book.gold-btn:hover { background: #b8860b; color: white; }
+.affiliate-disclaimer { font-size: 0.72rem; color: #aaa; margin-top: 4px; font-style: italic; }
+
+/* ── CURRENCY CONVERTER ─────────────────────────── */
+.converter-box {
+  background: white; border-radius: 20px; padding: 30px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+  max-width: 500px; margin: 0 auto 30px;
+}
+.converter-box h3 { font-family: 'Playfair Display', serif; color: var(--forest); margin-bottom: 20px; font-size: 1.4rem; }
+.converter-row { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+.converter-row input, .converter-row select {
+  flex: 1; min-width: 120px; padding: 12px 14px;
+  border: 2px solid #e0e0e0; border-radius: 10px;
+  font-size: 1rem; font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.2s;
+}
+.converter-row input:focus, .converter-row select:focus { outline: none; border-color: var(--jade); }
+.converter-result {
+  background: linear-gradient(135deg, var(--jade), var(--mint));
+  color: white; border-radius: 12px; padding: 18px 22px;
+  font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700;
+  text-align: center; margin-top: 10px;
+}
+.converter-result small { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 400; opacity: 0.85; margin-top: 4px; }
+.btn-convert {
+  background: var(--gold); color: var(--forest);
+  border: none; border-radius: 10px;
+  padding: 12px 24px; font-size: 0.95rem; font-weight: 700;
+  cursor: pointer; transition: background 0.2s; white-space: nowrap;
+}
+.btn-convert:hover { background: #b8860b; color: white; }
+.rate-note { font-size: 0.75rem; color: #999; margin-top: 8px; text-align: center; }
+
+/* ── WEATHER SECTION ────────────────────────────── */
+.weather-hero {
+  background: linear-gradient(135deg, var(--jade), var(--mint));
+  border-radius: 20px; padding: 34px;
+  color: white; text-align: center; margin-bottom: 24px;
+}
+.weather-hero .wh-icon { font-size: 4rem; margin-bottom: 8px; }
+.weather-hero .wh-temp { font-family: 'Playfair Display', serif; font-size: 4.5rem; font-weight: 900; line-height: 1; }
+.weather-hero .wh-desc { font-size: 1.15rem; opacity: 0.9; margin-top: 6px; }
+.weather-hero .wh-meta { display: flex; justify-content: center; gap: 28px; margin-top: 20px; font-size: 0.9rem; opacity: 0.85; flex-wrap: wrap; }
+.weather-hero .wh-source { font-size: 0.72rem; opacity: 0.6; margin-top: 14px; }
+
+/* ── NEARBY EMERGENCY ───────────────────────────── */
+.emergency-section { margin-top: 24px; }
+.emergency-section h3 { font-family: 'Playfair Display', serif; color: var(--forest); font-size: 1.4rem; margin-bottom: 16px; }
+.emergency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.emergency-card {
+  background: white; border-radius: 16px; padding: 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border-top: 4px solid var(--red); transition: transform 0.3s;
+}
+.emergency-card.police { border-top-color: var(--blue); }
+.emergency-card:hover { transform: translateY(-3px); }
+.emergency-icon { font-size: 2rem; }
+.emergency-info h4 { font-weight: 600; color: var(--forest); margin-bottom: 3px; font-size: 0.95rem; }
+.emergency-info p { font-size: 0.8rem; color: #666; margin-bottom: 4px; }
+.emergency-info a { color: var(--red); font-weight: 600; text-decoration: none; font-size: 0.88rem; }
+.emergency-card.police .emergency-info a { color: var(--blue); }
+
+.nearby-places-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; }
+.nearby-card {
+  background: white; border-radius: 14px; padding: 18px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--mint);
+}
+.nearby-card.hosp { border-left-color: var(--red); }
+.nearby-card.police { border-left-color: var(--blue); }
+.nearby-card h4 { font-weight: 600; color: var(--forest); font-size: 0.92rem; margin-bottom: 4px; }
+.nearby-card p { font-size: 0.8rem; color: #666; }
+.nearby-card .dist-badge { display: inline-block; background: var(--warm); color: var(--forest); border-radius: 20px; padding: 2px 10px; font-size: 0.72rem; font-weight: 600; margin-top: 6px; }
+.nearby-card a.map-link { color: var(--jade); font-size: 0.8rem; text-decoration: none; font-weight: 500; }
+.nearby-card a.map-link:hover { text-decoration: underline; }
+
+/* ── PAID LISTING CARD ──────────────────────────── */
+.listing-card {
+  background: white; border-radius: 16px; padding: 22px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 2px solid var(--gold); position: relative;
+  transition: transform 0.3s;
+}
+.listing-card:hover { transform: translateY(-4px); }
+.listing-card .featured-badge {
+  position: absolute; top: -1px; right: 16px;
+  background: var(--gold); color: var(--forest);
+  font-size: 0.7rem; font-weight: 700; padding: 3px 10px;
+  border-radius: 0 0 8px 8px; letter-spacing: 0.5px;
+}
+.listing-card h3 { font-family: 'Playfair Display', serif; color: var(--forest); margin-bottom: 6px; }
+.listing-card p { font-size: 0.87rem; color: #555; line-height: 1.6; }
+
+/* ── PAID LISTING FORM ──────────────────────────── */
+.listing-form {
+  background: linear-gradient(135deg, var(--forest), var(--jade));
+  border-radius: 20px; padding: 34px; color: white; margin-top: 30px;
+}
+.listing-form h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 8px; }
+.listing-form p { opacity: 0.85; font-size: 0.9rem; margin-bottom: 22px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.form-row.single { grid-template-columns: 1fr; }
+.listing-form input, .listing-form select, .listing-form textarea {
+  width: 100%; padding: 11px 14px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 10px; color: white; font-size: 0.9rem;
+  font-family: 'DM Sans', sans-serif;
+}
+.listing-form input::placeholder, .listing-form textarea::placeholder { color: rgba(255,255,255,0.5); }
+.listing-form textarea { resize: vertical; min-height: 90px; }
+.pricing-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.tier-card {
+  background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 12px; padding: 16px; text-align: center; cursor: pointer; transition: all 0.3s;
+}
+.tier-card:hover, .tier-card.selected { background: var(--gold); border-color: var(--gold); color: var(--forest); }
+.tier-card .tier-price { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; }
+.tier-card .tier-name { font-size: 0.8rem; font-weight: 600; margin-top: 2px; }
+.tier-card .tier-desc { font-size: 0.72rem; opacity: 0.8; margin-top: 4px; }
+.btn-submit {
+  background: var(--gold); color: var(--forest);
+  border: none; border-radius: 10px;
+  padding: 13px 30px; font-size: 0.95rem; font-weight: 700;
+  cursor: pointer; transition: all 0.2s; width: 100%;
+}
+.btn-submit:hover { background: white; }
+.form-success { background: rgba(82,183,136,0.3); border: 1px solid var(--mint); border-radius: 10px; padding: 14px; text-align: center; margin-top: 12px; display: none; }
+
+/* ── PRICE TABLE ────────────────────────────────── */
+.price-table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.price-table th { background: var(--jade); color: white; padding: 14px 18px; text-align: left; font-size: 0.88rem; }
+.price-table td { padding: 12px 18px; border-bottom: 1px solid #f0f0f0; font-size: 0.88rem; }
+.price-table tr:last-child td { border-bottom: none; }
+.price-table tr:hover td { background: var(--warm); }
+
+/* ── DO/DONT ────────────────────────────────────── */
+.do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 600px) { .do-dont { grid-template-columns: 1fr; } }
+.do-list, .dont-list { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+.do-list h3 { color: #27ae60; margin-bottom: 14px; font-family: 'Playfair Display', serif; }
+.dont-list h3 { color: var(--red); margin-bottom: 14px; font-family: 'Playfair Display', serif; }
+.do-list li, .dont-list li {
+  padding: 7px 0; border-bottom: 1px solid #f5f5f5;
+  font-size: 0.88rem; list-style: none;
+  display: flex; align-items: flex-start; gap: 8px; line-height: 1.4;
+}
+.do-list li::before { content: '✓'; color: #27ae60; font-weight: 700; flex-shrink: 0; }
+.dont-list li::before { content: '✗'; color: var(--red); font-weight: 700; flex-shrink: 0; }
+
+/* ── MAP ────────────────────────────────────────── */
+.map-container { border-radius: 20px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.15); margin-bottom: 20px; }
+.map-container iframe { width: 100%; height: 400px; border: none; display: block; }
+
+/* ── CHECKLIST ──────────────────────────────────── */
+.checklist { list-style: none; }
+.checklist li {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; background: white; border-radius: 10px;
+  margin-bottom: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-size: 0.9rem; cursor: pointer; transition: background 0.2s;
+}
+.checklist li:hover { background: var(--warm); }
+.checklist li input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--jade); cursor: pointer; flex-shrink: 0; }
+.checklist li.checked { text-decoration: line-through; color: #999; }
+
+/* ── TRANSPORT ──────────────────────────────────── */
+.transport-card { background: white; border-radius: 16px; padding: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--mint); }
+.transport-card h3 { font-family: 'Playfair Display', serif; color: var(--forest); margin-bottom: 9px; }
+.transport-card p { font-size: 0.87rem; color: #555; line-height: 1.6; }
+.transport-card .price-badge { background: var(--warm); color: var(--forest); padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; display: inline-block; margin-top: 8px; }
+
+/* ── TOUR CARDS (affiliate) ─────────────────────── */
+.tour-card {
+  background: white; border-radius: 16px; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s;
+}
+.tour-card:hover { transform: translateY(-5px); }
+.tour-img { width: 100%; height: 160px; object-fit: cover; display: block; background: linear-gradient(135deg, var(--jade), var(--mint)); }
+.tour-img-placeholder { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; font-size: 3rem; background: linear-gradient(135deg, var(--jade), var(--mint)); }
+.tour-body { padding: 18px; }
+.tour-body h3 { font-family: 'Playfair Display', serif; color: var(--forest); font-size: 1rem; margin-bottom: 6px; }
+.tour-body p { font-size: 0.82rem; color: #555; margin-bottom: 10px; line-height: 1.5; }
+.tour-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.tour-price { font-weight: 700; color: var(--jade); }
+.tour-rating { color: var(--gold); font-size: 0.82rem; }
+
+/* ── COMMISSION INFO ────────────────────────────── */
+.commission-box {
+  background: linear-gradient(135deg, #fff8e1, #fdf6e3);
+  border: 2px solid var(--gold); border-radius: 16px;
+  padding: 24px; margin-bottom: 24px;
+}
+.commission-box h3 { font-family: 'Playfair Display', serif; color: var(--forest); margin-bottom: 12px; }
+.commission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+.comm-item { text-align: center; padding: 14px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.comm-item .comm-pct { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--jade); }
+.comm-item .comm-label { font-size: 0.78rem; color: #666; margin-top: 4px; }
+
+/* ── FOOTER ─────────────────────────────────────── */
+footer { background: var(--forest); color: rgba(255,255,255,0.7); text-align: center; padding: 30px 20px; font-size: 0.85rem; }
+footer span { color: var(--gold); }
+footer a { color: var(--gold); text-decoration: none; }
+
+/* ── SCROLL TOP ─────────────────────────────────── */
+#scrollTop {
+  display: none; position: fixed; bottom: 24px; right: 24px; z-index: 999;
+  background: var(--jade); color: white; border: none;
+  width: 46px; height: 46px; border-radius: 50%;
+  font-size: 1.2rem; cursor: pointer; align-items: center; justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: background 0.2s;
+}
+#scrollTop:hover { background: var(--forest); }
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 480px) {
+  .clock-bar { top: auto; bottom: 20px; right: 10px; }
+  .lang-bar { top: 10px; left: 10px; }
+  .lang-btn { padding: 4px 8px; font-size: 0.7rem; }
+  .nav-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 18px 10px; }
+  .nav-btn { padding: 12px 6px; }
+  .nav-btn .icon { font-size: 1.4rem; }
+  .nav-btn .label { font-size: 0.68rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .weather-strip { gap: 14px; font-size: 0.8rem; }
+}
+</style>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <p>Made with ❤️ for travelers visiting <span>Malang, East Java, Indonesia</span></p>
+  <p style="margin-top:8px; font-size:0.78rem;">Prices accurate as of 2026 · Always verify locally · Affiliate links may earn commission</p>
+  <p style="margin-top:16px;">
+    📧 <a href="mailto:kandisatriya.remote@gmail.com">kandisatriya.remote@gmail.com</a>
+    &nbsp;|&nbsp;
+    💬 <a href="https://wa.me/6281250900387" target="_blank">WhatsApp</a>
+  </p>
+</footer>
+<script>
+// ── CLOCK ────────────────────────────────────────
+function updateClock() {
+  var now = new Date();
+  var opts = { timeZone: 'Asia/Jakarta', hour12: false };
+  var t = now.toLocaleTimeString('en-GB', { ...opts, hour:'2-digit', minute:'2-digit', second:'2-digit' });
+  var d = now.toLocaleDateString('en-GB', { ...opts, weekday:'long', day:'numeric', month:'long', year:'numeric' });
+  document.getElementById('clock').textContent = t + ' WIB';
+  document.getElementById('clock-date').textContent = d;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ── SECTION TOGGLE ────────────────────────────────
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  var el = document.getElementById(id);
+  if (el) { el.classList.add('active'); el.scrollIntoView({ behavior:'smooth', block:'start' }); }
+  if (btn) btn.classList.add('active');
+}
+
+// ── CHECKLIST ─────────────────────────────────────
+function toggleCheck(li, event) {
+  var cb = li.querySelector('input');
+  if (event.target !== cb) cb.checked = !cb.checked;
+  li.classList.toggle('checked', cb.checked);
+}
+
+// ── SCROLL TOP ────────────────────────────────────
+window.addEventListener('scroll', () => {
+  document.getElementById('scrollTop').style.display = window.scrollY > 400 ? 'flex' : 'none';
+});
+function scrollToTop() { window.scrollTo({ top:0, behavior:'smooth' }); }
+
+// ── LIVE WEATHER (Open-Meteo — FREE, no key needed) ──
+async function loadWeather() {
+  try {
+    const url = 'https://api.open-meteo.com/v1/forecast?latitude=-7.9797&longitude=112.6304&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,precipitation_probability&timezone=Asia%2FJakarta';
+    const r = await fetch(url);
+    const d = await r.json();
+    const c = d.current;
+    const code = c.weather_code;
+    const icon = weatherIcon(code);
+    const desc = weatherDesc(code);
+    const temp = Math.round(c.temperature_2m);
+    const feels = Math.round(c.apparent_temperature);
+    const hum = c.relative_humidity_2m;
+    const wind = Math.round(c.wind_speed_10m);
+    const rain = c.precipitation_probability;
+
+    // Strip
+    document.getElementById('weatherStrip').innerHTML = `
+      <div class="witem">${icon} <span class="wtemp">${temp}°C</span> <span class="wlabel">${desc}</span></div>
+      <div class="witem">💧 <span class="wlabel">Humidity: ${hum}%</span></div>
+      <div class="witem">💨 <span class="wlabel">Wind: ${wind} km/h</span></div>
+      <div class="witem">🌧️ <span class="wlabel">Rain: ${rain}%</span></div>
+      <div class="witem" style="font-size:0.75rem; opacity:0.7;">📍 Malang, WIB · Live</div>
+    `;
+
+    // Section
+    document.getElementById('wh-temp').textContent = temp + '°C';
+    document.getElementById('wh-desc').textContent = desc;
+    document.getElementById('wh-feels').textContent = 'Feels like ' + feels + '°C';
+    document.getElementById('wh-humidity').textContent = '💧 Humidity ' + hum + '%';
+    document.getElementById('wh-wind').textContent = '💨 Wind ' + wind + ' km/h';
+    document.getElementById('wh-rain').textContent = '🌧️ Rain ' + rain + '%';
+    document.querySelector('#weatherHero .wh-icon').textContent = icon;
+  } catch(e) {
+    document.getElementById('weatherStrip').innerHTML = '<span style="opacity:0.7;">⚠️ Weather data unavailable — check connection</span>';
+  }
+}
+
+function weatherIcon(code) {
+  if (code === 0) return '☀️';
+  if (code <= 2) return '🌤️';
+  if (code === 3) return '☁️';
+  if (code <= 48) return '🌫️';
+  if (code <= 57) return '🌦️';
+  if (code <= 67) return '🌧️';
+  if (code <= 77) return '❄️';
+  if (code <= 82) return '🌧️';
+  if (code <= 86) return '🌨️';
+  if (code <= 99) return '⛈️';
+  return '🌡️';
+}
+function weatherDesc(code) {
+  if (code === 0) return 'Clear Sky';
+  if (code <= 2) return 'Partly Cloudy';
+  if (code === 3) return 'Overcast';
+  if (code <= 48) return 'Foggy';
+  if (code <= 57) return 'Light Drizzle';
+  if (code <= 67) return 'Rainy';
+  if (code <= 77) return 'Snowy';
+  if (code <= 82) return 'Rain Showers';
+  if (code <= 86) return 'Snow Showers';
+  if (code <= 99) return 'Thunderstorm';
+  return 'Variable';
+}
+
+// ── LIVE CURRENCY (Open Exchange Rates — free tier) ──
+var ratesCache = null;
+async function loadRates() {
+  try {
+    // Using frankfurter.app — completely free, no key needed
+    const r = await fetch('https://api.frankfurter.app/latest?from=IDR&to=USD,EUR,GBP,AUD,SGD,MYR,JPY,KRW,NOK,SAR,AED');
+    const d = await r.json();
+    // d.rates gives IDR → X; invert to get X → IDR
+    ratesCache = {};
+    for (const [k, v] of Object.entries(d.rates)) {
+      ratesCache[k] = 1 / v; // how many IDR per 1 unit of currency
+    }
+    ratesCache['IDR'] = 1;
+
+    // Ticker
+    const tickers = ['USD','EUR','GBP','SGD','AUD','MYR','NOK','JPY','KRW'];
+    const flags = {USD:'🇺🇸',EUR:'🇪🇺',GBP:'🇬🇧',SGD:'🇸🇬',AUD:'🇦🇺',MYR:'🇲🇾',NOK:'🇳🇴',JPY:'🇯🇵',KRW:'🇰🇷'};
+    let tickerHTML = '<span class="tick-label">💱 LIVE IDR RATES:</span>';
+    tickers.forEach(c => {
+      if (ratesCache[c]) {
+        const val = ratesCache[c] >= 1000 
+          ? 'Rp' + Math.round(ratesCache[c]).toLocaleString() 
+          : 'Rp' + ratesCache[c].toFixed(1);
+        tickerHTML += `<span>${flags[c]} <strong>1 ${c}</strong> = ${val}</span>`;
+      }
+    });
+    document.getElementById('currencyTicker').innerHTML = tickerHTML;
+  } catch(e) {
+    document.getElementById('currencyTicker').innerHTML = '<span style="opacity:0.6;">💱 Exchange rates temporarily unavailable</span>';
+  }
+}
+
+function convertCurrency() {
+  if (!ratesCache) { alert('Exchange rates loading, please wait a moment…'); return; }
+  const amount = parseFloat(document.getElementById('convAmount').value) || 0;
+  const from = document.getElementById('convFrom').value;
+  const rate = ratesCache[from];
+  if (!rate) return;
+  const idr = amount * rate;
+  document.getElementById('convResult').innerHTML = `
+    ${amount.toLocaleString()} ${from} = <strong>Rp ${Math.round(idr).toLocaleString()}</strong>
+    <small>Rate: 1 ${from} = Rp ${Math.round(rate).toLocaleString()} · Live via Frankfurter API</small>
+  `;
+}
+
+function convertFromIDR() {
+  if (!ratesCache) { alert('Exchange rates loading, please wait a moment…'); return; }
+  const idr = parseFloat(document.getElementById('convIDR').value) || 0;
+  const to = document.getElementById('convTo').value;
+  const rate = ratesCache[to];
+  if (!rate) return;
+  const result = idr / rate;
+  const decimals = result < 100 ? 2 : 0;
+  document.getElementById('convResultIDR').innerHTML = `
+    Rp ${idr.toLocaleString()} = <strong>${result.toFixed(decimals)} ${to}</strong>
+    <small>Rate: 1 ${to} = Rp ${Math.round(rate).toLocaleString()} · Live via Frankfurter API</small>
+  `;
+}
+
+// ── PAID LISTING FORM ─────────────────────────────
+function selectTier(card, tier) {
+  document.querySelectorAll('.tier-card').forEach(c => c.classList.remove('selected'));
+  card.classList.add('selected');
+  document.getElementById('selectedTier').value = tier;
+}
+
+function submitListing() {
+  const name = document.getElementById('bizName').value.trim();
+  const contact = document.getElementById('bizContact').value.trim();
+  if (!name || !contact) { alert('Please fill in Business Name and WhatsApp Number at minimum.'); return; }
+  const tier = document.getElementById('selectedTier').value;
+  const type = document.getElementById('bizType').value;
+  const email = document.getElementById('bizEmail').value;
+  const address = document.getElementById('bizAddress').value;
+  const desc = document.getElementById('bizDesc').value;
+  const tierLabel = { basic: 'Basic (Rp300K/month)', standard: 'Standard (Rp600K/3months)', premium: 'Premium (Rp1.2M/6months)' }[tier];
+  const msg = encodeURIComponent(
+    `Hi! I'd like to apply for a Featured Listing on your Malang Travel Guide.\n\n` +
+    `📌 Business: ${name}\n` +
+    `🏷️ Type: ${type || 'Not specified'}\n` +
+    `📦 Package: ${tierLabel}\n` +
+    `📞 WhatsApp: ${contact}\n` +
+    `📧 Email: ${email || 'Not provided'}\n` +
+    `📍 Address: ${address || 'Not provided'}\n` +
+    `📝 Description: ${desc || 'Not provided'}`
+  );
+  document.getElementById('listingSuccess').style.display = 'block';
+  setTimeout(() => { window.open(`https://wa.me/6281250900387?text=${msg}`, '_blank'); }, 500);
+}
+
+// ── LANGUAGE ──────────────────────────────────────
+function setLang(lang, btn) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  var t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    var key = el.getAttribute('data-i18n');
+    if (t && t[key]) el.innerHTML = t[key];
+  });
+}
+
+// ── INIT ──────────────────────────────────────────
+loadWeather();
+loadRates();
+
+// ── TRANSLATIONS ──────────────────────────────────
+const translations = {
+  en: {
+    'hero-title': 'Welcome to<br><span>Malang</span>',
+    'hero-sub': "Your complete guide to East Java's most charming city",
+    'nav-prepare':'Before You Go','nav-weather':'Weather','nav-costume':'What to Wear',
+    'nav-equipment':'Equipment','nav-destinations':'Destinations','nav-prices':'Prices',
+    'nav-map':'Map','nav-accommodation':'Hotels','nav-transport':'Transport',
+    'nav-emergency':'Emergency','nav-dodont':"Do's & Don'ts",'nav-market':'Markets'
+  },
+  id: {
+    'hero-title': 'Selamat Datang di<br><span>Malang</span>',
+    'hero-sub': 'Panduan lengkap kota terindah di Jawa Timur',
+    'nav-prepare':'Persiapan','nav-weather':'Cuaca','nav-costume':'Pakaian',
+    'nav-equipment':'Perlengkapan','nav-destinations':'Destinasi','nav-prices':'Harga',
+    'nav-map':'Peta','nav-accommodation':'Hotel','nav-transport':'Transportasi',
+    'nav-emergency':'Darurat','nav-dodont':'Aturan','nav-market':'Pasar'
+  },
+  ru: {
+    'hero-title': 'Добро пожаловать в<br><span>Маланг</span>',
+    'hero-sub': 'Полный путеводитель по жемчужине Восточной Явы',
+    'nav-prepare':'Подготовка','nav-weather':'Погода','nav-costume':'Одежда',
+    'nav-equipment':'Снаряжение','nav-destinations':'Достопримечательности','nav-prices':'Цены',
+    'nav-map':'Карта','nav-accommodation':'Жильё','nav-transport':'Транспорт',
+    'nav-emergency':'Экстренные','nav-dodont':'Правила','nav-market':'Рынки'
+  },
+  ko: {
+    'hero-title': '말랑에<br><span>오신걸 환영합니다</span>',
+    'hero-sub': '동부 자바의 가장 매력적인 도시 완벽 가이드',
+    'nav-prepare':'출발 전','nav-weather':'날씨','nav-costume':'복장',
+    'nav-equipment':'준비물','nav-destinations':'관광지','nav-prices':'가격',
+    'nav-map':'지도','nav-accommodation':'숙박','nav-transport':'교통',
+    'nav-emergency':'긴급','nav-dodont':'주의사항','nav-market':'시장'
+  },
+  no: {
+    'hero-title': 'Velkommen til<br><span>Malang</span>',
+
+    'hero-sub': 'Din komplette guide til Øst-Javas mest sjarmerende by',
+    'nav-prepare':'Forberedelse','nav-weather':'Vær','nav-costume':'Antrekk',
+    'nav-equipment':'Utstyr','nav-destinations':'Destinasjoner','nav-prices':'Priser',
+    'nav-map':'Kart','nav-accommodation':'Overnatting','nav-transport':'Transport',
+    'nav-emergency':'Nødhjelp','nav-dodont':'Regler','nav-market':'Markeder'
+  }
+};
+</script>
+</body>
+</html>
