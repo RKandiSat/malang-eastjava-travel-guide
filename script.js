@@ -101,8 +101,8 @@ function weatherDesc(code) {
 var ratesCache = null;
 async function loadRates() {
   try {
-    // Using frankfurter.app — completely free, no key needed
-    const r = await fetch('https://api.frankfurter.app/latest?from=USD');
+    // Using open.er-api.com — completely free, no key needed
+    const r = await fetch('https://open.er-api.com/v6/latest/USD');
     const d = await r.json();
    
     ratesCache = {};
@@ -147,7 +147,7 @@ function convertCurrency() {
   const idr = amount * rate;
   document.getElementById('convResult').innerHTML = `
     ${amount.toLocaleString()} ${from} = <strong>Rp ${Math.round(idr).toLocaleString()}</strong>
-    <small>Rate: 1 ${from} = Rp ${Math.round(rate).toLocaleString()} · Live via Frankfurter API</small>
+    <small>Rate: 1 ${from} = Rp ${Math.round(rate).toLocaleString()} · Live via open.er-api.com</small>
   `;
 }
 
@@ -161,7 +161,7 @@ function convertFromIDR() {
   const decimals = result < 100 ? 2 : 0;
   document.getElementById('convResultIDR').innerHTML = `
     Rp ${idr.toLocaleString()} = <strong>${result.toFixed(decimals)} ${to}</strong>
-    <small>Rate: 1 ${to} = Rp ${Math.round(rate).toLocaleString()} · Live via Frankfurter API</small>
+    <small>Rate: 1 ${to} = Rp ${Math.round(rate).toLocaleString()} · Live via open.er-api.com</small>
   `;
 }
 
