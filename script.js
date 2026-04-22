@@ -269,3 +269,10 @@ document.getElementById('convIDR')?.addEventListener('input', convertFromIDR);
 document.getElementById('convTo')?.addEventListener('change', convertFromIDR);
 
 setInterval(loadRates, 300000);
+
+// ---- INITIALISE ALL ON PAGE LOAD --------------------------------
+loadWeather ();
+loadRates ();
+loadClock ();
+setInterval(updateClock, 1000);
+setInterval(loadRates, 1800000); // refresh rates every 30 min
