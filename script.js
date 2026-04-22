@@ -207,11 +207,6 @@ function setLang(lang, btn) {
   });
 }
 
-// ── INIT ──────────────────────────────────────────
-loadWeather();
-loadRates();
-updateClock();
-
 // ── TRANSLATIONS ──────────────────────────────────
 const translations = {
   en: {
