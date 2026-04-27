@@ -272,8 +272,8 @@ updateClock ();
 setInterval(updateClock, 1000);
 setInterval(loadRates, 1800000); // refresh rates every 30 min
 
-// ---- TOUR CATEGORY TOGGLE ----
-function taggleTour(category) {
+// ---- TOUR CATEGORY TOGGLE ------------------------------
+function toggleTour(category) {
   const allTours = ['city', 'culinary', 'nature', 'cultural'];
   allTours.forEach(tour => {
     const el = document.getElementById('tour-' + tour);
@@ -290,7 +290,7 @@ function taggleTour(category) {
   const target = document.getElementById('tour-' + category);
   if (target && target.style.display === 'block') {
     setTimeout(() => {
-      target.scrollIntoView({ behaviour: 'smooth', block: 'start'});
+      target.scrollIntoView({ behavior: 'smooth', block: 'start'});
     }, 100);
   }
 }
@@ -308,11 +308,11 @@ const heroImage = [
 ];
 
 let currentHeroImage = 0;
-const hero = document.querySelector('hero');
+const hero = document.querySelector('.hero');
 
 function rotateHero() {
   if (!hero) return;
-  currentHeroImage = (currentHeroImage + 1) % heroImages.length;
+  currentHeroImage = (currentHeroImages + 1) % heroImages.length;
   hero.style.transition = 'background-image 1.5s ease-in-out';
   hero.style.backgroundImage = `
     linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),

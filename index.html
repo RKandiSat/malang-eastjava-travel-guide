@@ -20,6 +20,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6756551448742131"
      crossorigin="anonymous"></script>
 
+
 <!-- ═══════ HERO ═══════ -->
 <div class="hero"> 
   <div class="hero-overlay"></div>
@@ -80,7 +81,7 @@
   Apply at <a href="https://adsense.google.com" target="_blank" style="color:var(--jade);">adsense.google.com</a> with your Netlify domain to activate Google AdSense here. Once approved, replace this div with your AdSense snippet.
 </div>
 
-<section id="about" class="about-section"
+<section id="about" class="about-section">
   <div class="container">
     <h2>About Me</h2>
     <p>Hi, I'm R Kandi — a local guide born and raised in Malang, East Java. I have spent 30 years exploring every corner of this city, 
@@ -163,14 +164,14 @@
 
       <!-- ====== CITY TOUR ====== -->
       <div class="tour-card" onclick="toggleTour('city')">
-        < class="tour-thumb" style="background-image: url('htps://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600')">
+       <div class="tour-thumb" style="background-image: url('htps://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600')">
         <div class="tour-overlay">
           <h3>🏛️ City Tour</h3>
           <p>Historical building, museum & heritage</p>
           <span class="tour-btn">Explore -></span>
         </div>
+       </div>
       </div>
-    </div>
 
       <!-- ====== NATURE TOUR ====== -->
       <div class="tour-card" onclick="toggleTour('nature')">
@@ -192,9 +193,7 @@
             <span class="tour-btn">Explore -></span>
           </div>
         </div>
-      </div> 
-
-    </div>
+      </div>
 
 <!-- ====== EXPANDABLE TOUR DETAILS ====== -->
 
@@ -228,8 +227,8 @@
       <p>Military history museum with artifacts from Indonesian independence struggle. Free entry</p>  
     </div>
   </div>
-  <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I'm%20interested%20in%20the%20City%20Tour">
-    class="whatsapp-tour-btn">💬 Book City Tour in WhatsApp</a>
+  <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I'm%20interested%20in%20the%20City%20Tour"
+     class="whatsapp-tour-btn">💬 Book City Tour in WhatsApp</a>
 </div>
 
 <!-- ====== CULINARY TOUR DETAIL ====== -->
@@ -242,16 +241,16 @@
       <p>Malang's most legendary meatball soup since 1977. Locals queue daily. The original Malang bakso experience.</p>
     </div>
     <div class="location-card">
-      <img src="https://"images.unsplash.com/photo-1555400038-63f5ba517a47?w=400" alt="Cwie Mie">
+      <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400" alt="Cwie Mie">
       <h4>Cwie Mie Malang</h4>
       <p>Thin noodles unique to Malang. Best at Cwie Mie Oen on Jl. Semeru. A dish you cannot find anywhere else</p>
     </div>
     <div class="location-card">
-      <img src="https://"images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400" alt="Rawon">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400" alt="Rawon">
       <h4>Rawon Nguling</h4>
       <p>Dark beef soup with black keluak nuts. Deeply local flavor. Best eaten for breakfast like true Malang locals.</p>
     </div>
-    <div class="="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400" alt="Pasar Besar Night">
+    <div class="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400" alt="Pasar Besar Night">
     <h4>Pasar Besar Night Market</h4>
     <p>Evening food vendors selling everything local. Es Teh Poci, grilled corn, martabak. Best after 6pm.</p>
     </div>
@@ -292,13 +291,13 @@
     <h4>Hutan Pinus Semeru</h4>
     <p>Pine forest trail with beautiful foggy atmosphere. Popular for morning walks and photography.</p>
   </div>
-</div> 
-<a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I'm%20interested%20in%20the%20Nature%20Tour" class="whatsapp-tour-btn">💬 Book Nature Tour on WhatsApp</a>
+  <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I'm%20interested%20in%20the%20Nature%20Tour" class="whatsapp-tour-btn">💬 Book Nature Tour on WhatsApp</a>
+</div>
 
 <!-- ====== CULTURAL TOUR DETAIL ====== -->
 <div id="tour-cultural" class="tour-detail" style="display:none;">
   <h3>🎭 Cultural Tour - Temple & Traditions</h3>
-  < class="tour-locations">
+  <div class="tour-locations">
     <div class="location-card">
       <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400" alt="Singosari Temple">
       <h4>Candi Singosari</h4>
@@ -466,7 +465,7 @@
         <option value="SAR">🇸🇦 SAR — Saudi Riyal</option>
         <option value="AED">🇦🇪 AED — UAE Dirham</option>
       </select>
-      <button class="btn-convert" onclick="convertFunction
+      <button class="btn-convert" onclick="convertCurrency
       ()">Convert →</button>
     </div>
     <div class="converter-result" id="convResult">

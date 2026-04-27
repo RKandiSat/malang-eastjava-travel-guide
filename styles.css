@@ -593,11 +593,11 @@ footer a { color: var(--gold); text-decoration: none; }
 /* TOUR DETAIL PANEL */
 .tour-detail {
   background: white;
-  border-radius: white;
+  border-radius: 16px;
   padding: 40px 30px;
-  margin: 20x auto;
+  margin: 20px auto;
   max-width: 1000px;
-  box-shadow: 0 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: left;
 }
 
