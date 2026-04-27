@@ -271,3 +271,56 @@ loadRates ();
 updateClock ();
 setInterval(updateClock, 1000);
 setInterval(loadRates, 1800000); // refresh rates every 30 min
+
+// ---- TOUR CATEGORY TOGGLE ----
+function taggleTour(category) {
+  const allTours = ['city', 'culinary', 'nature', 'cultural'];
+  allTours.forEach(tour => {
+    const el = document.getElementById('tour-' + tour);
+    if (el) {
+      if (tour === category) {
+        el.style.display = el.style.display === 'none' ? 'block' : 'none';
+      } else {
+        el.style.display = 'none';
+      }
+    }
+  })
+
+  // Smooth sroll to detail
+  const target = document.getElementById('tour-' + category);
+  if (target && target.style.display === 'block') {
+    setTimeout(() => {
+      target.scrollIntoView({ behaviour: 'smooth', block: 'start'});
+    }, 100);
+  }
+}
+
+// --- ROTATING HERO BACKGROUND -------------
+const heroImage = [
+  'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=1600', // Bromo
+  'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1600', // Colorful village
+  'https://images.unsplash.com/photo-1584810359583-96fc3448beaa?w=1600', // Temple
+  'https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=1600', // Waterfall
+  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600', // Beach
+  'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600', // Mountains
+  'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600', // Forest
+  'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600', // Scenic
+];
+
+let currentHeroImage = 0;
+const hero = document.querySelector('hero');
+
+function rotateHero() {
+  if (!hero) return;
+  currentHeroImage = (currentHeroImage + 1) % heroImages.length;
+  hero.style.transition = 'background-image 1.5s ease-in-out';
+  hero.style.backgroundImage = `
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('${heroImage[currentHeroImage]}')
+    `;
+}
+
+// Rotate every 5 seconds
+setInterval(rotateHero, 5000);
+
+rotateHero(); // start immediately

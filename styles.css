@@ -511,3 +511,153 @@ footer a { color: var(--gold); text-decoration: none; }
   text-align: center;
   color: #555;
 }
+
+/* ------ TOUR CATEGORIES ------ */
+.tour-categories {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.tour-categories h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #1a3a2a;
+  margin-bottom: 8px;
+}
+
+.tour-categories > p {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.tour-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.tour-card {
+  width: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.tour-card:hover {
+  transform:translateY(-6px);
+}
+
+.tour-thumb {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.tour-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  padding: 20px 16px 16px;
+  color: white;
+  text-align: left;
+}
+
+.tour-overlay h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.tour-overlay p {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+.tour-btn {
+  display: inline-block;
+  background: var(--gold, #c8963e);
+  color: white;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* TOUR DETAIL PANEL */
+.tour-detail {
+  background: white;
+  border-radius: white;
+  padding: 40px 30px;
+  margin: 20x auto;
+  max-width: 1000px;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.tour-detail h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #1a3a2a;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.tour-locations {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.location-card {
+  width: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.location-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.location-card h4 {
+  font-size: 0.85rem;
+  color: #1a3a2a;
+  padding: 8px 10px 4px;
+  font-weight: 600;
+}
+
+.location-card p {
+  font-size: 0.75rem;
+  color: #666;
+  padding: 0 10px 10px;
+  line-height: 1.4;
+}
+
+.whatsapp-tour-btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  background: #25D366;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.whatsapp-tour-btn:hover {
+  background: #1ebe5d;
+}
+
