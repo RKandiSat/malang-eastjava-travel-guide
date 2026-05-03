@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Malang Travel Guide — East Java, Indonesia</title>
- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Malang Travel Guide — East Java, Indonesia</title>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
  
 <!-- ═══════════════════════════════════════════════════
      MONETIZATION NOTES (for site owner):
@@ -17,50 +17,29 @@
 ═══════════════════════════════════════════════════ -->
 
 <!-- ====== Google AdSense ====== -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6756551448742131"
-     crossorigin="anonymous"></script>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6756551448742131" crossorigin="anonymous"></script>
 
 <!-- ═══════ HERO ═══════ -->
 <div class="hero"> 
   <div class="hero-overlay"></div>
-  <div class="lang-bar">
-    <button class="lang-btn active" onclick="setLang('en',this)">🇬🇧 EN</button>
-    <button class="lang-btn" onclick="setLang('id',this)">🇮🇩 ID</button>
-    <button class="lang-btn" onclick="setLang('ru',this)">🇷🇺 RU</button>
-    <button class="lang-btn" onclick="setLang('ko',this)">🇰🇷 KO</button>
-    <button class="lang-btn" onclick="setLang('no',this)">🇳🇴 NO</button>
-  </div>
+    <div class="lang-bar">
+      <button class="lang-btn active" onclick="setLang('en',this)">🇬🇧 EN</button>
+      <button class="lang-btn" onclick="setLang('id',this)">🇮🇩 ID</button>
+      <button class="lang-btn" onclick="setLang('ru',this)">🇷🇺 RU</button>
+      <button class="lang-btn" onclick="setLang('ko',this)">🇰🇷 KO</button>
+      <button class="lang-btn" onclick="setLang('no',this)">🇳🇴 NO</button>
+    </div>
+
   <div class="clock-bar">
     <div class="clock-time" id="clock">--:--:--</div>
     <div class="clock-date" id="clock-date">Malang, East Java</div>
   </div>
+
   <div class="hero-content">
-    <div class="logo">M</div>
+    <div class="logo">MTEJ</div>
     <h1 data-i18n="hero-title">Welcome to<br><span>Malang</span></h1>
     <p data-i18n="hero-sub">Your complete guide to East Java's most charming city</p>
-  </div>
-</div>
-
-<!-- ═══════ SECTION: WEATHER ═══════ -->
-<div class="section" id="weather">
-  <h2 class="section-title">🌤️ Malang Live Weather</h2>
-  <div class="weather-hero" id="weatherHero">
-    <div class="wh-icon">⛅</div>
-    <div class="wh-temp" id="wh-temp">--°C</div>
-    <div class="wh-desc" id="wh-desc">Loading live data…</div>
-    <div class="wh-meta">
-      <span id="wh-feels">Feels like --°C</span>
-      <span id="wh-humidity">💧 Humidity --%</span>
-      <span id="wh-wind">💨 Wind -- km/h</span>
-      <span id="wh-rain">🌧️ Rain --%</span>
-    </div>
-    <div class="wh-source">🛰️ Live data from Open-Meteo API · Malang, East Java (7.98°S, 112.63°E)</div>
-  </div>
-  <div class="card-grid"></div>
-    <div class="card"><h3>🌞 Dry Season (May–Oct)</h3><p>Best time to visit. Clear skies, lower humidity. Temperatures 18–28°C. Perfect for Bromo and outdoor activities.</p><span class="tag">Best Season</span></div>
-    <div class="card"><h3>🌧️ Wet Season (Nov–Apr)</h3><p>Afternoon showers daily. Morning usually clear. Lush green landscapes. Lower tourist crowds and hotel rates.</p><span class="tag">Budget Season</span></div>
-    <div class="card"><h3>🏔️ Mountain Areas (Bromo)</h3><p>Temperatures drop to 5–10°C at night near Bromo crater. Bring warm layers even in dry season.</p><span class="tag">Pack Warm</span></div>
+    <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I%20want%20to%20plan%20my%20Malang%20trip" class="hero-wa-btn" target="_blank">💬 Plan My Trip — Free Consultation</a>
   </div>
 </div>
 
@@ -69,28 +48,36 @@
   <span class="weather-loading">⛅ Loading live Malang weather...</span>
  </div>
 
+
+
+ <!-- ═══════ SECTION: WEATHER ═══════ -->
+<div class="section" id="weather">
+  <h2 class="section-title">🌤️ Malang Live Weather</h2>
+  <div class="weather-hero" id="weatherHero">
+    <div class="wh-icon">⛅</div>
+    <div class="wh-temp" id="wh-temp">--°C</div>
+    <div class="wh-desc" id="wh-desc">Loading live data…</div>
+      <div class="wh-meta">
+        <span id="wh-feels">Feels like --°C</span>
+        <span id="wh-humidity">💧 Humidity --%</span>
+        <span id="wh-wind">💨 Wind -- km/h</span>
+        <span id="wh-rain">🌧️ Rain --%</span>
+      </div>
+    <div class="wh-source">🛰️ Live data from Open-Meteo API · Malang, East Java (7.98°S, 112.63°E)</div>
+  </div>
+
+  <div class="card-grid"></div>
+    <div class="card"><h3>🌞 Dry Season (May–Oct)</h3><p>Best time to visit. Clear skies, lower humidity. Temperatures 18–28°C. Perfect for Bromo and outdoor activities.</p><span class="tag">Best Season</span></div>
+    <div class="card"><h3>🌧️ Wet Season (Nov–Apr)</h3><p>Afternoon showers daily. Morning usually clear. Lush green landscapes. Lower tourist crowds and hotel rates.</p><span class="tag">Budget Season</span></div>
+    <div class="card"><h3>🏔️ Mountain Areas (Bromo)</h3><p>Temperatures drop to 5–10°C at night near Bromo crater. Bring warm layers even in dry season.</p><span class="tag">Pack Warm</span></div>
+  </div>
+</div>
+
 <!-- ═══════ CURRENCY TICKER ═══════ -->
 <div class="currency-ticker" id="currencyTicker">
   <span class="tick-label">💱 LIVE RATES:</span>
   <span class="weather-loading" style="color:rgba(255,255,255,0.6);">Loading exchange rates...</span>
 </div>
-
-<!-- ═══════ ADSENSE SLOT (replace with real code) ═══════ -->
-<div class="adsense-slot">
-  <strong>📢 Advertisement Space</strong>
-  Apply at <a href="https://adsense.google.com" target="_blank" style="color:var(--jade);">adsense.google.com</a> with your Netlify domain to activate Google AdSense here. Once approved, replace this div with your AdSense snippet.
-</div>
-
-<section id="about" class="about-section">
-  <div class="container">
-    <h2>About Me</h2>
-    <p>Hi, I'm R Kandi — a local guide born and raised in Malang, East Java. I have spent 30 years exploring every corner of this city, 
-       from hidden warungs and quiet temples to the dramatic sunrise over Mount Bromo.</p>
-    <p>I built this guide because I want travelers to experience the real Malang — not just the tourist version. When you message me on WhatsApp, 
-       you are not talking to a travel agency. You are talking to someone who actually lives here, knows the locals, and genuinely wants your 
-       trip to be unforgettable.</p>
-  </div>
-</section>
 
 <!-- ═══════ NAV GRID ═══════ -->
 <div class="nav-grid">
@@ -112,51 +99,56 @@
 </div>
 
 <!-- ======= PACKAGES CONTAINER ALL ====== -->
-<section>
+<section class="packages-section">
   <h2>Explore Malang Like a Local - Not a Tourist</h2>
-  <p>Private, flexible, and budget-friendly trips guide by a local</p>
-  <div>
-    <div>
+  <p>Private, flexible, and budget-friendly trips guided by a local</p>
+  
+  <div class="packages-grid">
+    
+    <div class="packages-card">
       <h3>🏍️ Budget Explorer</h3>
-      <p>Perfect for solo travelers.</p>
-      <h2>$15 - $30</h2>
-      <ul>
-        <li>Private motorbike tour</li>
-        <li>Local guide (me)</li>
-        <li>Flexible route</li>
-        <li>Food included</li>
-      </ul>
-      <a href="https://wa.me/6281250900387">Plan My Trip Now</a>
+      <p>Perfect for solo travelers</p>
+      <div class="package-price">$15 - $30</div>
+        <ul>
+          <li>Private motorbike tour</li>
+          <li>Local guide (me)</li>
+          <li>Flexible route</li>
+          <li>Food included</li>
+        </ul>
+        <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I'm%20interested%20in%20the%20Budget%20Explorer%20tour" class="pkg-btn" target="_blank">Plan My Trip Now</a>
     </div>
-    <div>
+
+    <div class="packages-card">
       <h3>🚗 Group Comfort</h3>
       <p>Best for friends & small groups</p>
-      <h2>$20 - $30 / person</h2> 
-      <ul>
-        <li>Private car + driver</li>
-        <li>2-7 people</li>
-        <li>Shared cost</li>
-        <li>Custom itinerary</li>
-      </ul>
-      <a href="https://wa.me/6281250900387">Plan Your Trip</a>
+      <div class="packages-price">$20 - $30 / person</div> 
+        <ul>
+          <li>Private car + driver</li>
+          <li>2-7 people</li>
+          <li>Shared cost</li>
+          <li>Custom itinerary</li>
+        </ul>
+        <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I'm%20interested%20in%20the%20Group%20Comfort%20tour" class="pkg-btn" target="_blank">Plan Your Trip</a>
     </div>
-    <div>
-      <h3>🌟 Private Custom Experience</h3>
+
+    <div class="package-card featured-pkg">
+      <h3>🌟 Private Custom</h3>
       <p>Comfort, flexible, personalized</p>
-      <h2>Custom Pricing</h2>
-      <ul>
-        <li>Private car</li>
-        <li>Flexible schedule</li>
-        <li>Relaxed pace</li>
-        <li>Ideal for couples & families</li>
-      </ul>
-      <a href="https://wa.me/6281250900387">Customize Your Trip</a>
+      <div class="package-price">Custom Pricing</div>
+        <ul>
+          <li>Private car</li>
+          <li>Flexible schedule</li>
+          <li>Relaxed pace</li>
+          <li>Ideal for couples & families</li>
+        </ul>
+        <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I'm%20interested%20in%20a%20Private%20Custom%20tour" class="ptg-btn" target="_blank">Customize Your Trip</a>
     </div>
+
   </div>
 </section>
 
 <!-- ====== TOUR CATEGORIES ====== -->
-<section class="tour-categories">
+<div class="tour-categories">
   <h2>Explore Malang Your Way</h2>
     <p>Choose your adventure - private guided tours with a real local</p>
 
@@ -164,14 +156,25 @@
 
       <!-- ====== CITY TOUR ====== -->
       <div class="tour-card" onclick="toggleTour('city')">
-       <div class="tour-thumb" style="background-image: url('htps://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600')">
-        <div class="tour-overlay">
-          <h3>🏛️ City Tour</h3>
-          <p>Historical building, museum & heritage</p>
-          <span class="tour-btn">Explore -></span>
+        <div class="tour-thumb" style="background-image: url('htps://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600')">
+          <div class="tour-overlay">
+            <h3>🏛️ City Tour</h3>
+            <p>Historical buildings, museums & heritage</p>
+            <span class="tour-btn-label">Explore -></span>
+          </div>
         </div>
-       </div>
       </div>
+
+      <!-- ====== CULINARY TOUR ====== -->
+      <div class="tour-card" onclick="toggleTour('culinary')">
+        <div class="tour-thumb" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600')">
+          <div class="tour-overlay">
+            <h3>🍜 Culinary Tour</h3>
+            <p>Hidden Gems & local food secrets</p>
+            <span class="tour-btn-label">Explore -></span>
+          </div>
+        </div>
+      </div>    
 
       <!-- ====== NATURE TOUR ====== -->
       <div class="tour-card" onclick="toggleTour('nature')">
@@ -179,10 +182,10 @@
           <div class="tour-overlay">
             <h3>🌿 Nature Tour</h3>
             <p>Waterfalls, mountains & hidden trails</p>
-            <span class="tour-btn">Explore -></span>
+            <span class="tour-btn-label">Explore -></span>
           </div>
-        </div>
-      </div>    
+        </div> 
+      </div>     
 
       <!-- ====== CULTURAL TOUR ====== -->
       <div class="tour-card" onclick="toggleTour('cultural')">
@@ -190,332 +193,293 @@
           <div class="tour-overlay">
             <h3>🎭 Cultural Tour</h3>
             <p>Temples, traditions & local crafts</p>
-            <span class="tour-btn">Explore -></span>
+            <span class="tour-btn-label">Explore -></span>
           </div>
         </div>
       </div>
+    </div>
 
-<!-- ====== EXPANDABLE TOUR DETAILS ====== -->
-
-<!-- ====== CITY TOUR DETAILS ====== -->
+    <!-- ====== CITY TOUR DETAILS ====== -->
 <div id="tour-city" class="tour-details" style="display: none;">
   <h3>🏛️ City Tour - Historical Malang</h3>
-  <div class="tour-locations">
-    <div class="location-card">
-      <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400" alt="Kayutangan Heritage">
-      <h4>Kayutangan Heritage</h4>
-      <p>Restored Dutch colonial street with original 1900s shophouses. Walking distance from city center.</p>
-    </div>
-    <div class="location-card">
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400" alt="Toko Oen">
-      <h4>Toko Oen Ice Cream Parlour</h4>
-      <p>Famous Dutch-era cafe since 1930. Original colonial interior preserved. Must visit for history lovers.</p>
-    </div>
-    <div class="location-card">
-      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400" alt="Ijen Boulevard">
-      <h4>Jl. Ijen Boulevard</h4>
-      <p>Tree-lined Dutch colonial avenue. Beautiful morning walk with colonial villas and flower gardens.</p>
-    </div>
-    <div class="location-card">
-      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400" alt="Pasar Besar">
-      <h4>Pasar Besar Malang</h4>
-      <p>Historic central market build in 1917. Authentic local shopping experience. Cheapest prices in city.</p>
-    </div>
-    <div class="location-card">
-      <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=400" alt="Museum Brawijaya">
-      <h4>Museum Brawijaya</h4>
-      <p>Military history museum with artifacts from Indonesian independence struggle. Free entry</p>  
-    </div>
+    <div class="tour-locations">
+
+      <div class="location-card">
+        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400" alt="Kayutangan Heritage">
+        <h4>Kayutangan Heritage</h4>
+        <p>Restored Dutch colonial street with original 1900s shophouses. Walking distance from city center.</p>
+      </div>
+
+      <div class="location-card">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400" alt="Toko Oen">
+        <h4>Toko Oen Ice Cream Parlour</h4>
+        <p>Famous Dutch-era cafe since 1930. Original colonial interior preserved. Must visit for history lovers.</p>
+      </div>
+
+      <div class="location-card">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400" alt="Ijen Boulevard">
+        <h4>Jl. Ijen Boulevard</h4>
+        <p>Tree-lined Dutch colonial avenue. Beautiful morning walk with colonial villas and flower gardens.</p>
+      </div>
+
+      <div class="location-card">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400" alt="Pasar Besar">
+        <h4>Pasar Besar Malang</h4>
+        <p>Historic central market build in 1917. Authentic local shopping experience. Cheapest prices in city.</p>
+      </div>
+
+      <div class="location-card">
+        <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=400" alt="Museum Brawijaya">
+        <h4>Museum Brawijaya</h4>
+        <p>Military history museum with artifacts from Indonesian independence struggle. Free entry</p>  
+      </div>
+
   </div>
-  <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I'm%20interested%20in%20the%20City%20Tour"
-     class="whatsapp-tour-btn">💬 Book City Tour in WhatsApp</a>
+    <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I'm%20interested%20in%20the%20City%20Tour" class="whatsapp-tour-btn">💬 Book City Tour in WhatsApp</a>
 </div>
 
-<!-- ====== CULINARY TOUR DETAIL ====== -->
- <div id="tour-culinary" class="tour-detail" style="display:none;">
-  <h3>🍜 Culinary Tour - Hidden Food Gems</h3>
-  <div class="tour-locations">
-    <div class="location-card">
-      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400" alt="Bakso President">
-      <h4>Bakso President</h4>
-      <p>Malang's most legendary meatball soup since 1977. Locals queue daily. The original Malang bakso experience.</p>
-    </div>
-    <div class="location-card">
-      <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400" alt="Cwie Mie">
-      <h4>Cwie Mie Malang</h4>
-      <p>Thin noodles unique to Malang. Best at Cwie Mie Oen on Jl. Semeru. A dish you cannot find anywhere else</p>
-    </div>
-    <div class="location-card">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400" alt="Rawon">
-      <h4>Rawon Nguling</h4>
-      <p>Dark beef soup with black keluak nuts. Deeply local flavor. Best eaten for breakfast like true Malang locals.</p>
-    </div>
-    <div class="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400" alt="Pasar Besar Night">
-    <h4>Pasar Besar Night Market</h4>
-    <p>Evening food vendors selling everything local. Es Teh Poci, grilled corn, martabak. Best after 6pm.</p>
-    </div>
-    <div class="location-card">
-      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400" alt="Kampung Keramik">
-      <h4>Batu Apple Orchards</h4>
-      <p>Pick fresh apples and strawberries directly from the farm. Unique experience only possible near Malang.</p>
-    </div>
-  </div>
-  <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I'm%20interested%20in%20the%20Culinary%20Tour" class="whatsapp-tour-btn">💬 Book Culinary Tour on WhatsApp</a>
-</div>
+  <!-- ====== CULINARY TOUR DETAIL ====== -->
+  <div id="tour-culinary" class="tour-detail" style="display:none;">
+    <h3>🍜 Culinary Tour - Hidden Food Gems</h3>
+    <div class="tour-locations">
 
-<!-- ====== CULTURAL TOUR DETAIL ====== -->
-<div id="tour-nature" class="tour-detail" style="display:none;">
-  <h3>🌿 Nature Tour - Waterfalls & Mountains</h3>
-  <div class="location-card">
-    <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=400" alt="Coban Pelangi">
-    <h4>Coban Pelangi - Rainbow Waterfall</h4>
-    <p>Most beautiful waterfall near Malang. Rainbow appears in morning mist. 30 minutes from city center.</p>
-  </div>
-  <div class="location-card">
-    <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=400" alt="Mount Bromo">
-    <h4>Mount Bromo Sunrise</h4>
-    <p>Indonesia's most iconic volcanic lanscape. Sunrise from penanjakan is unforgettable. 2 hours from Malang.</p>
-  </div>
-  <div class="location-card">
-    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400" alt="Gunung Banyak">
-    <h4>Gunung Banyak - Paragliding Hill</h4>
-    <p>Panoramic views over Batu city. Paragliding available for adventurers. Stunning sunset spot.</p>
-  </div>
-  <div class="location-card">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400" alt="Sendang Biru">
-    <h4>Pantain Sendang Biru</h4>
-    <p>Fishing village beach with access to Sempu Island nature reserve. 1.5 hours from Malang. Untouched beauty.</p>
-  </div>
-  <div class="location-card">
-    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400" alt="Hutan Pinus">
-    <h4>Hutan Pinus Semeru</h4>
-    <p>Pine forest trail with beautiful foggy atmosphere. Popular for morning walks and photography.</p>
-  </div>
-  <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I'm%20interested%20in%20the%20Nature%20Tour" class="whatsapp-tour-btn">💬 Book Nature Tour on WhatsApp</a>
-</div>
+      <div class="location-card">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400" alt="Bakso President">
+        <h4>Bakso President</h4>
+        <p>Malang's most legendary meatball soup since 1977. Locals queue daily. The original Malang bakso experience.</p>
+      </div>
 
-<!-- ====== CULTURAL TOUR DETAIL ====== -->
-<div id="tour-cultural" class="tour-detail" style="display:none;">
-  <h3>🎭 Cultural Tour - Temple & Traditions</h3>
-  <div class="tour-locations">
-    <div class="location-card">
-      <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400" alt="Singosari Temple">
-      <h4>Candi Singosari</h4>
-      <p>13th century Hindu temple from the Singosari Kingdom. Free entry. Walking distance from city center.</p>
+      <div class="location-card">
+        <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400" alt="Cwie Mie">
+        <h4>Cwie Mie Malang</h4>
+        <p>Thin noodles unique to Malang. Best at Cwie Mie Oen on Jl. Semeru. A dish you cannot find anywhere else</p>
+      </div>
+
+      <div class="location-card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400" alt="Rawon">
+        <h4>Rawon Nguling</h4>
+        <p>Dark beef soup with black keluak nuts. Deeply local flavor. Best eaten for breakfast like true Malang locals.</p>
+      </div>
+
+      <div class="location-card">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400" alt="Pasar Besar Night">
+        <h4>Pasar Besar Night Market</h4>
+        <p>Evening food vendors selling everything local. Es Teh Poci, grilled corn, martabak. Best after 6pm.</p>
+      </div>
+
+      <div class="location-card">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400" alt="Kampung Keramik">
+        <h4>Batu Apple Orchards</h4>
+        <p>Pick fresh apples and strawberries directly from the farm. Unique experience only possible near Malang.</p>
+      </div>
     </div>
-    <div class="location-card">
-      <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400" alt="Candi Badut">
-      <h4>Candi Badut</h4>
-      <p>Oldest temple in East Java, rarely visited by tourist. Authentic and peaceful. Hidden hsitorical gem.</p>
-    </div>
-    <div class="location-card">
-      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400" alt="kampung Budaya">
-      <h4>Kampung Budaya Polowijen</h4>
-      <p>Tradition Javanese culture village. Watch batik making and topeng carving by local artisan.</p>
-    </div>
-    <div class="location-card">
-      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400" alt="Wayang Topeng">
-      <h4>Wayang Topeng Malangan</h4>
-      <p>Traditional Malang mask dance performance. Living cultural heritage unique to this region.</p>
-    </div>
-  <div class="location-card">
-    <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=400" alt="Desa Pujon">
-    <h4>Desa Wisata Pujon Kidul</h4>
-    <p>Authentic farming village with cultural experience. Milk fresh from cows, tradition cooking, rice fields.</p>
+    <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I'm%20interested%20in%20the%20Culinary%20Tour" class="whatsapp-tour-btn">💬 Book Culinary Tour on WhatsApp</a></div>
   </div>
-</div>
-<a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I'm%20interested%20in%20the%20Cultural%20Tour" 
-       class="whatsapp-tour-btn">💬 Book Cultural Tour on WhatsApp</a>
-</div>    
+
+  <!-- ====== ABOUT ME ====== -->
+<section id="about" class="about-section">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>Hi, I'm R Kandi — a local guide born and raised in Malang, East Java. I have spent 30 years exploring every corner of this city, 
+       from hidden warungs and quiet temples to the dramatic sunrise over Mount Bromo.</p>
+    <p>I built this guide because I want travelers to experience the real Malang — not just the tourist version. When you message me on WhatsApp, 
+       you are not talking to a travel agency. You are talking to someone who actually lives here, knows the locals, and genuinely wants your 
+       trip to be unforgettable.</p>
+    <a href="https://wa.me/6281250900387?text=Hi%20Kandi!%20I%20want%20to%20plan%20my%20Malang%20trip" class="pkg-btn" target="_blank" style="display:inline-block; margin-top:20px;">💬 Message Me on WhatsApp</a>
+  </div>
 </section>
 
 <!-- ═══════ SECTION: PREPARE ═══════ -->
 <div class="section" id="prepare">
   <h2 class="section-title">📋 Before You Go to Malang</h2>
-  <ul class="checklist" id="checklist">
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Valid passport / national ID</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Indonesian Rupiah (IDR) cash — ATMs available but bring some</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Travel insurance covering medical emergencies</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Accommodation bookings confirmed</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Download Google Maps offline for Malang area</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Download Gojek / Grab app for local transport</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Local SIM card or international roaming plan</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Sunscreen SPF 50+ (tropical sun is intense)</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Light rain jacket (afternoon showers common)</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Mosquito repellent</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Basic medication: paracetamol, antidiarrheal, antihistamine</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Reusable water bottle (stay hydrated)</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Power adapter (Indonesia uses Type C/F, 220V)</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Emergency contact numbers saved</li>
-    <li onclick="toggleCheck(this,event)"><input type="checkbox"> Modest clothing for visiting temples/mosques</li>
-  </ul>
+    <ul class="checklist" id="checklist">
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Valid passport / national ID</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Indonesian Rupiah (IDR) cash — ATMs available but bring some</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Travel insurance covering medical emergencies</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Accommodation bookings confirmed</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Download Google Maps offline for Malang area</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Download Gojek / Grab app for local transport</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Local SIM card or international roaming plan</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Sunscreen SPF 50+ (tropical sun is intense)</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Light rain jacket (afternoon showers common)</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Mosquito repellent</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Basic medication: paracetamol, antidiarrheal, antihistamine</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Reusable water bottle (stay hydrated)</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Power adapter (Indonesia uses Type C/F, 220V)</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Emergency contact numbers saved</li>
+      <li onclick="toggleCheck(this,event)"><input type="checkbox"> Modest clothing for visiting temples/mosques</li>
+    </ul>
 </div>
 
 <!-- ═══════ SECTION: WEATHER ═══════ -->
 <div class="section" id="weather">
   <h2 class="section-title">🌤️ Malang Live Weather</h2>
-  <div class="weather-hero" id="weatherHero">
-    <div class="wh-icon">⛅</div>
-    <div class="wh-temp" id="wh-temp">--°C</div>
-    <div class="wh-desc" id="wh-desc">Loading live data…</div>
-    <div class="wh-meta">
-      <span id="wh-feels">Feels like --°C</span>
-      <span id="wh-humidity">💧 Humidity --%</span>
-      <span id="wh-wind">💨 Wind -- km/h</span>
-      <span id="wh-rain">🌧️ Rain --%</span>
-    </div>
+    <div class="weather-hero" id="weatherHero">
+      <div class="wh-icon">⛅</div>
+      <div class="wh-temp" id="wh-temp">--°C</div>
+      <div class="wh-desc" id="wh-desc">Loading live data…</div>
+      <div class="wh-meta">
+        <span id="wh-feels">Feels like --°C</span>
+        <span id="wh-humidity">💧 Humidity --%</span>
+        <span id="wh-wind">💨 Wind -- km/h</span>
+        <span id="wh-rain">🌧️ Rain --%</span>
+      </div>
+    </div>  
+
     <div class="wh-source">🛰️ Live data from Open-Meteo API · Malang, East Java (7.98°S, 112.63°E)</div>
-  </div>
+</div>
+
   <div class="card-grid"></div>
     <div class="card"><h3>🌞 Dry Season (May–Oct)</h3><p>Best time to visit. Clear skies, lower humidity. Temperatures 18–28°C. Perfect for Bromo and outdoor activities.</p><span class="tag">Best Season</span></div>
     <div class="card"><h3>🌧️ Wet Season (Nov–Apr)</h3><p>Afternoon showers daily. Morning usually clear. Lush green landscapes. Lower tourist crowds and hotel rates.</p><span class="tag">Budget Season</span></div>
     <div class="card"><h3>🏔️ Mountain Areas (Bromo)</h3><p>Temperatures drop to 5–10°C at night near Bromo crater. Bring warm layers even in dry season.</p><span class="tag">Pack Warm</span></div>
   </div>
-</div>
 
 <!-- ═══════ SECTION: COSTUME ═══════ -->
 <div class="section" id="costume">
   <h2 class="section-title">👕 What to Wear in Malang</h2>
-  <div class="card-grid">
-    <div class="card"><h3>☀️ City Exploration</h3><p>Light breathable clothing — cotton t-shirts, shorts or light trousers. Comfortable walking shoes. Sunglasses and hat essential.</p><span class="tag">Casual</span></div>
-    <div class="card"><h3>🕌 Temples & Mosques</h3><p>Cover shoulders and knees. Long trousers or skirt. Many sites provide sarongs for loan. Remove shoes before entering.</p><span class="tag">Respectful</span></div>
-    <div class="card"><h3>🏔️ Mount Bromo / Semeru</h3><p>Warm jacket or fleece essential — temperatures drop below 10°C at dawn. Gloves recommended. Sturdy hiking boots.</p><span class="tag">Warm Layers</span></div>
-    <div class="card"><h3>🌧️ Rainy Days</h3><p>Compact foldable rain jacket or poncho. Quick-dry clothing. Waterproof sandals useful. Most rain passes within 30–60 minutes.</p><span class="tag">Rain Ready</span></div>
-    <div class="card"><h3>🍽️ Restaurants & Malls</h3><p>Smart casual acceptable everywhere. Air conditioning in malls can be very cold — bring a light cardigan.</p><span class="tag">Smart Casual</span></div>
-    <div class="card"><h3>📸 Instagram Spots</h3><p>Malang's Kampung Warna-Warni and flower gardens are very popular. Bright colors photograph beautifully!</p><span class="tag">Colorful</span></div>
-  </div>
+    <div class="card-grid">
+      <div class="card"><h3>☀️ City Exploration</h3><p>Light breathable clothing — cotton t-shirts, shorts or light trousers. Comfortable walking shoes. Sunglasses and hat essential.</p><span class="tag">Casual</span></div>
+      <div class="card"><h3>🕌 Temples & Mosques</h3><p>Cover shoulders and knees. Long trousers or skirt. Many sites provide sarongs for loan. Remove shoes before entering.</p><span class="tag">Respectful</span></div>
+      <div class="card"><h3>🏔️ Mount Bromo / Semeru</h3><p>Warm jacket or fleece essential — temperatures drop below 10°C at dawn. Gloves recommended. Sturdy hiking boots.</p><span class="tag">Warm Layers</span></div>
+      <div class="card"><h3>🌧️ Rainy Days</h3><p>Compact foldable rain jacket or poncho. Quick-dry clothing. Waterproof sandals useful. Most rain passes within 30–60 minutes.</p><span class="tag">Rain Ready</span></div>
+      <div class="card"><h3>🍽️ Restaurants & Malls</h3><p>Smart casual acceptable everywhere. Air conditioning in malls can be very cold — bring a light cardigan.</p><span class="tag">Smart Casual</span></div>
+      <div class="card"><h3>📸 Instagram Spots</h3><p>Malang's Kampung Warna-Warni and flower gardens are very popular. Bright colors photograph beautifully!</p><span class="tag">Colorful</span></div>
+    </div>
 </div>
 
 <!-- ═══════ SECTION: EQUIPMENT ═══════ -->
 <div class="section" id="equipment">
   <h2 class="section-title">🧳 Essential Equipment to Carry</h2>
-  <div class="card-grid">
-    <div class="card"><h3>📱 Smartphone</h3><p>Google Maps, Gojek, Grab, Google Translate offline. Keep fully charged. Bring powerbank.</p><span class="tag">Essential</span></div>
-    <div class="card"><h3>🔋 Powerbank</h3><p>Minimum 10,000mAh. Charging points not always available at tourist sites. Full day drains battery fast.</p><span class="tag">Essential</span></div>
-    <div class="card"><h3>💵 Cash (IDR)</h3><p>Many local warungs and markets don't accept cards. Carry Rp200,000–500,000 daily. BNI, BCA, Mandiri ATMs available.</p><span class="tag">Essential</span></div>
-    <div class="card"><h3>🌂 Compact Umbrella</h3><p>Afternoon rain showers can appear suddenly. A foldable umbrella fits any bag.</p><span class="tag">Recommended</span></div>
-    <div class="card"><h3>🧴 Sunscreen & Insect Repellent</h3><p>SPF 50+ for outdoor activities. DEET-based repellent for evening and jungle areas.</p><span class="tag">Health</span></div>
-    <div class="card"><h3>💊 Basic Medication</h3><p>Paracetamol, oral rehydration salts, antidiarrheal, antihistamine, antiseptic wipes. Pharmacies widespread.</p><span class="tag">Health</span></div>
-  </div>
+    <div class="card-grid">
+      <div class="card"><h3>📱 Smartphone</h3><p>Google Maps, Gojek, Grab, Google Translate offline. Keep fully charged. Bring powerbank.</p><span class="tag">Essential</span></div>
+      <div class="card"><h3>🔋 Powerbank</h3><p>Minimum 10,000mAh. Charging points not always available at tourist sites. Full day drains battery fast.</p><span class="tag">Essential</span></div>
+      <div class="card"><h3>💵 Cash (IDR)</h3><p>Many local warungs and markets don't accept cards. Carry Rp200,000–500,000 daily. BNI, BCA, Mandiri ATMs available.</p><span class="tag">Essential</span></div>
+      <div class="card"><h3>🌂 Compact Umbrella</h3><p>Afternoon rain showers can appear suddenly. A foldable umbrella fits any bag.</p><span class="tag">Recommended</span></div>
+      <div class="card"><h3>🧴 Sunscreen & Insect Repellent</h3><p>SPF 50+ for outdoor activities. DEET-based repellent for evening and jungle areas.</p><span class="tag">Health</span></div>
+      <div class="card"><h3>💊 Basic Medication</h3><p>Paracetamol, oral rehydration salts, antidiarrheal, antihistamine, antiseptic wipes. Pharmacies widespread.</p><span class="tag">Health</span></div>
+    </div>
 </div>
 
 <!-- ═══════ SECTION: DESTINATIONS ═══════ -->
 <div class="section" id="destinations">
   <h2 class="section-title">🗺️ Top Destinations in & Around Malang</h2>
-  <div class="card-grid">
-    <div class="card"><h3>🌋 Mount Bromo</h3><p>Indonesia's most iconic volcanic landscape. Sunrise from Penanjakan point is unforgettable. Book jeep tours the night before. 2 hours from Malang.</p><span class="tag gold">Must Visit</span></div>
-    <div class="card"><h3>🎨 Kampung Warna-Warni</h3><p>Jodipan & Ksatrian colorful villages along the Brantas River. Free to enter. Most photogenic spot in Malang city.</p><span class="tag">Instagram Spot</span></div>
-    <div class="card"><h3>🏛️ Singosari Temple</h3><p>13th century Hindu temple from the Singosari Kingdom. Free entry. Respectful dress required.</p><span class="tag">History</span></div>
-    <div class="card"><h3>🌸 Coban Rondo Waterfall</h3><p>Beautiful waterfall surrounded by pine forest, 30km northwest of Malang. Easy hiking trail. Entry ~Rp15,000.</p><span class="tag">Nature</span></div>
-    <div class="card"><h3>🏖️ Balekambang Beach</h3><p>Known as "Bali of Malang" — small Hindu temple on rocky island offshore. 65km south. Dramatic scenery.</p><span class="tag">Beach</span></div>
-    <div class="card"><h3>🍎 Batu Apple Orchards</h3><p>Malang region famous for apples and strawberries. Pick your own fruit at Agro Wisata farms in Batu.</p><span class="tag">Experience</span></div>
-    <div class="card"><h3>🏰 Alun-Alun Malang</h3><p>Central city square with Dutch colonial architecture, Grand Mosque, government buildings. Evening food vendors. Free.</p><span class="tag">City Center</span></div>
-    <div class="card"><h3>🦁 Jatim Park 1, 2 & 3</h3><p>Three world-class theme parks in Batu — science museum, wildlife park, and water park. Book tickets online for discounts.</p><span class="tag">Family</span></div>
-    <div class="card"><h3>🌺 Selecta Recreation Park</h3><p>Colonial-era flower garden and recreation park in Batu city. Beautiful rose gardens. Entry ~Rp35,000.</p><span class="tag">Family</span></div>
-  </div>
+    <div class="card-grid">
+      <div class="card"><h3>🌋 Mount Bromo</h3><p>Indonesia's most iconic volcanic landscape. Sunrise from Penanjakan point is unforgettable. Book jeep tours the night before. 2 hours from Malang.</p><span class="tag gold">Must Visit</span></div>
+      <div class="card"><h3>🎨 Kampung Warna-Warni</h3><p>Jodipan & Ksatrian colorful villages along the Brantas River. Free to enter. Most photogenic spot in Malang city.</p><span class="tag">Instagram Spot</span></div>
+      <div class="card"><h3>🏛️ Singosari Temple</h3><p>13th century Hindu temple from the Singosari Kingdom. Free entry. Respectful dress required.</p><span class="tag">History</span></div>
+      <div class="card"><h3>🌸 Coban Rondo Waterfall</h3><p>Beautiful waterfall surrounded by pine forest, 30km northwest of Malang. Easy hiking trail. Entry ~Rp15,000.</p><span class="tag">Nature</span></div>
+      <div class="card"><h3>🏖️ Balekambang Beach</h3><p>Known as "Bali of Malang" — small Hindu temple on rocky island offshore. 65km south. Dramatic scenery.</p><span class="tag">Beach</span></div>
+      <div class="card"><h3>🍎 Batu Apple Orchards</h3><p>Malang region famous for apples and strawberries. Pick your own fruit at Agro Wisata farms in Batu.</p><span class="tag">Experience</span></div>
+      <div class="card"><h3>🏰 Alun-Alun Malang</h3><p>Central city square with Dutch colonial architecture, Grand Mosque, government buildings. Evening food vendors. Free.</p><span class="tag">City Center</span></div>
+      <div class="card"><h3>🦁 Jatim Park 1, 2 & 3</h3><p>Three world-class theme parks in Batu — science museum, wildlife park, and water park. Book tickets online for discounts.</p><span class="tag">Family</span></div>
+      <div class="card"><h3>🌺 Selecta Recreation Park</h3><p>Colonial-era flower garden and recreation park in Batu city. Beautiful rose gardens. Entry ~Rp35,000.</p><span class="tag">Family</span></div>
+    </div>
 </div>
 
 <!-- ═══════ SECTION: PRICES ═══════ -->
 <div class="section" id="prices">
   <h2 class="section-title">💰 Price Guide</h2>
-  <table class="price-table" style="margin-bottom:24px;">
-    <thead><tr><th>Item</th><th>Budget (IDR)</th><th>Mid-Range (IDR)</th><th>Comfort (IDR)</th></tr></thead>
-    <tbody>
-      <tr><td>🏨 Hotel per night</td><td>Rp150,000–300,000</td><td>Rp400,000–800,000</td><td>Rp1,000,000+</td></tr>
-      <tr><td>🍜 Local meal (warung)</td><td>Rp15,000–30,000</td><td>Rp50,000–100,000</td><td>Rp150,000+</td></tr>
-      <tr><td>🚗 Gojek / Grab ride</td><td>Rp10,000–25,000</td><td>Rp30,000–60,000</td><td>Rp80,000+</td></tr>
-      <tr><td>🌋 Bromo jeep tour</td><td>Rp350,000/person</td><td>Rp500,000/person</td><td>Rp800,000+</td></tr>
-      <tr><td>🎢 Jatim Park entry</td><td>—</td><td>Rp100,000–150,000</td><td>Rp200,000</td></tr>
-      <tr><td>🚐 Malang–Bromo transport</td><td>Rp80,000 (bus)</td><td>Rp200,000 (shared)</td><td>Rp500,000 (private)</td></tr>
-      <tr><td>☕ Café / coffee</td><td>Rp15,000–25,000</td><td>Rp35,000–60,000</td><td>Rp80,000+</td></tr>
-      <tr><td>🛒 Souvenirs</td><td>Rp20,000–50,000</td><td>Rp75,000–200,000</td><td>Rp300,000+</td></tr>
-    </tbody>
-  </table>
+    <table class="price-table" style="margin-bottom:24px;">
+      <thead><tr><th>Item</th><th>Budget (IDR)</th><th>Mid-Range (IDR)</th><th>Comfort (IDR)</th></tr></thead>
+        <tbody>
+          <tr><td>🏨 Hotel per night</td><td>Rp150,000–300,000</td><td>Rp400,000–800,000</td><td>Rp1,000,000+</td></tr>
+          <tr><td>🍜 Local meal (warung)</td><td>Rp15,000–30,000</td><td>Rp50,000–100,000</td><td>Rp150,000+</td></tr>
+          <tr><td>🚗 Gojek / Grab ride</td><td>Rp10,000–25,000</td><td>Rp30,000–60,000</td><td>Rp80,000+</td></tr>
+          <tr><td>🌋 Bromo jeep tour</td><td>Rp350,000/person</td><td>Rp500,000/person</td><td>Rp800,000+</td></tr>
+          <tr><td>🎢 Jatim Park entry</td><td>—</td><td>Rp100,000–150,000</td><td>Rp200,000</td></tr>
+          <tr><td>🚐 Malang–Bromo transport</td><td>Rp80,000 (bus)</td><td>Rp200,000 (shared)</td><td>Rp500,000 (private)</td></tr>
+          <tr><td>☕ Café / coffee</td><td>Rp15,000–25,000</td><td>Rp35,000–60,000</td><td>Rp80,000+</td></tr>
+          <tr><td>🛒 Souvenirs</td><td>Rp20,000–50,000</td><td>Rp75,000–200,000</td><td>Rp300,000+</td></tr>
+        </tbody>
+    </table>
+</div>
+
   <div class="card-grid">
     <div class="card">
       <h3>📅 Daily Budget Estimate</h3>
       <p><strong>Budget traveler:</strong> Rp500,000–700,000/day<br><strong>Mid-range:</strong> Rp1,000,000–1,500,000/day<br><strong>Comfort:</strong> Rp2,000,000+/day</p>
       <span class="tag">Per Person</span>
     </div>
+
     <div class="card">
       <h3>💱 Quick Exchange</h3>
       <p>Use the <strong>Currency tab</strong> for live rates! Approximate: Rp15,000 ≈ $1 USD · Rp17,000 ≈ €1 EUR · Rp19,000 ≈ £1 GBP</p>
       <span class="tag">Live Rates Available</span>
     </div>
   </div>
-</div>
 
-<!-- ═══════ SECTION: CURRENCY CONVERTER ═══════ -->
+<!-- ═══════ SECTION: CURRENCY ═══════ -->
 <div class="section" id="currency">
   <h2 class="section-title">💱 Live Currency Converter</h2>
-  <div class="converter-box">
-    <h3>Convert to Indonesian Rupiah</h3>
-    <div class="converter-row">
-      <input type="number" id="convAmount" value="100" min="0" placeholder="Amount">
-      <select id="convFrom">
-        <option value="USD">🇺🇸 USD — US Dollar</option>
-        <option value="EUR">🇪🇺 EUR — Euro</option>
-        <option value="GBP">🇬🇧 GBP — British Pound</option>
-        <option value="AUD">🇦🇺 AUD — Australian Dollar</option>
-        <option value="SGD">🇸🇬 SGD — Singapore Dollar</option>
-        <option value="MYR">🇲🇾 MYR — Malaysian Ringgit</option>
-        <option value="JPY">🇯🇵 JPY — Japanese Yen</option>
-        <option value="KRW">🇰🇷 KRW — South Korean Won</option>
-        <option value="NOK">🇳🇴 NOK — Norwegian Krone</option>
-        <option value="SAR">🇸🇦 SAR — Saudi Riyal</option>
-        <option value="AED">🇦🇪 AED — UAE Dirham</option>
-      </select>
-      <button class="btn-convert" onclick="convertCurrency
-      ()">Convert →</button>
+    <div class="converter-box">
+      <h3>Convert to Indonesian Rupiah</h3>
+        <div class="converter-row">
+          <input type="number" id="convAmount" value="100" min="0" placeholder="Amount">
+            <select id="convFrom">
+              <option value="USD">🇺🇸 USD — US Dollar</option>
+              <option value="EUR">🇪🇺 EUR — Euro</option>
+              <option value="GBP">🇬🇧 GBP — British Pound</option>
+              <option value="AUD">🇦🇺 AUD — Australian Dollar</option>
+              <option value="SGD">🇸🇬 SGD — Singapore Dollar</option>
+              <option value="MYR">🇲🇾 MYR — Malaysian Ringgit</option>
+              <option value="JPY">🇯🇵 JPY — Japanese Yen</option>
+              <option value="KRW">🇰🇷 KRW — South Korean Won</option>
+              <option value="NOK">🇳🇴 NOK — Norwegian Krone</option>
+              <option value="SAR">🇸🇦 SAR — Saudi Riyal</option>
+              <option value="AED">🇦🇪 AED — UAE Dirham</option>
+            </select>
+      <button class="btn-convert" onclick="convertCurrency()">Convert →</button>
     </div>
+
     <div class="converter-result" id="convResult">
       Enter an amount and click Convert
       <small id="convRate"></small>
     </div>
-    <p class="rate-note">📡 Live rates via Open Exchange Rates · Updates every 30 min · For reference only</p>
-  </div>
+      <p class="rate-note">📡 Live rates via Open Exchange Rates · Updates every 30 min · For reference only</p>
+</div>
 
   <!-- Reverse: IDR to foreign -->
   <div class="converter-box" style="margin-top: 20px;">
     <h3>Convert from Indonesian Rupiah</h3>
-    <div class="converter-row">
-      <input type="number" id="convIDR" value="500000" min="0" placeholder="IDR Amount">
-      <select id="convTo">
-        <option value="USD">🇺🇸 USD</option>
-        <option value="EUR">🇪🇺 EUR</option>
-        <option value="GBP">🇬🇧 GBP</option>
-        <option value="AUD">🇦🇺 AUD</option>
-        <option value="SGD">🇸🇬 SGD</option>
-        <option value="MYR">🇲🇾 MYR</option>
-        <option value="JPY">🇯🇵 JPY</option>
-        <option value="KRW">🇰🇷 KRW</option>
-        <option value="NOK">🇳🇴 NOK</option>
-        <option value="SAR">🇸🇦 SAR</option>
-        <option value="AED">🇦🇪 AED</option>
-      </select>
-      <button class="btn-convert" onclick="convertFromIDR()">Convert →</button>
-    </div>
-    <div class="converter-result" id="convResultIDR">
-      Enter an amount and click Convert
-      <small id="convRateIDR"></small>
-    </div>
-    <p class="rate-note">📡 Live rates via Open Exchange Rates · For reference only, not financial advice</p>
+      <div class="converter-row">
+        <input type="number" id="convIDR" value="500000" min="0" placeholder="IDR Amount">
+        <select id="convTo">
+          <option value="USD">🇺🇸 USD</option>
+          <option value="EUR">🇪🇺 EUR</option>
+          <option value="GBP">🇬🇧 GBP</option>
+          <option value="AUD">🇦🇺 AUD</option>
+          <option value="SGD">🇸🇬 SGD</option>
+          <option value="MYR">🇲🇾 MYR</option>
+          <option value="JPY">🇯🇵 JPY</option>
+          <option value="KRW">🇰🇷 KRW</option>
+          <option value="NOK">🇳🇴 NOK</option>
+          <option value="SAR">🇸🇦 SAR</option>
+          <option value="AED">🇦🇪 AED</option>
+        </select>
+        <button class="btn-convert" onclick="convertFromIDR()">Convert →</button>
+      </div>
+
+      <div class="converter-result" id="convResultIDR">
+        Enter an amount and click Convert
+        <small id="convRateIDR"></small>
+      </div>
+      <p class="rate-note">📡 Live rates via Open Exchange Rates · For reference only, not financial advice</p>
   </div>
-</div>
 
 <!-- ═══════ SECTION: HOTELS (Booking.com Affiliate) ═══════ -->
 <div class="section" id="hotels">
   <h2 class="section-title">🏨 Book Hotels in Malang</h2>
 
-  <div class="commission-box">
-    <h3>💰 Earn Commission on Every Booking</h3>
-    <p style="font-size:0.88rem; color:#666; margin-bottom:14px;">Sign up free at <a href="https://partners.booking.com" target="_blank" style="color:var(--jade); font-weight:600;">partners.booking.com</a> — replace the affiliate links below with your ID to start earning.</p>
-    <div class="commission-grid">
-      <div class="comm-item"><div class="comm-pct">25%</div><div class="comm-label">Booking.com commission on each booking</div></div>
-      <div class="comm-item"><div class="comm-pct">8%</div><div class="comm-label">Agoda affiliate commission rate</div></div>
-      <div class="comm-item"><div class="comm-pct">Free</div><div class="comm-label">Sign up — no fee to join affiliate programs</div></div>
+    <div class="commission-box">
+      <h3>💰 Earn Commission on Every Booking</h3>
+      <p style="font-size:0.88rem; color:#666; margin-bottom:14px;">Sign up free at <a href="https://partners.booking.com" target="_blank" style="color:var(--jade); font-weight:600;">partners.booking.com</a> — replace the affiliate links below with your ID to start earning.</p>
+        <div class="commission-grid">
+          <div class="comm-item"><div class="comm-pct">25%</div><div class="comm-label">Booking.com commission on each booking</div></div>
+          <div class="comm-item"><div class="comm-pct">8%</div><div class="comm-label">Agoda affiliate commission rate</div></div>
+          <div class="comm-item"><div class="comm-pct">Free</div><div class="comm-label">Sign up — no fee to join affiliate programs</div></div>
+        </div>
     </div>
-  </div>
 
   <div class="card-grid">
     <div class="affiliate-card">
@@ -523,50 +487,55 @@
       <div class="hotel-stars">★★★★★</div>
       <div class="hotel-price">From Rp1,800,000/night</div>
       <div class="hotel-desc">Iconic luxury hotel with colonial art collection. Award-winning restaurant. Central location near Alun-Alun.</div>
-      <!-- Replace 2840156 with your Booking.com affiliate ID -->
-      <a class="btn-book gold-btn" href="https://www.booking.com/hotel/id/tugu-malang.html?aid=2840156&label=malang-guide" target="_blank">📖 Book on Booking.com</a>
-      <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
+        <!-- Replace 2840156 with your Booking.com affiliate ID -->
+        <a class="btn-book gold-btn" href="https://www.booking.com/hotel/id/tugu-malang.html?aid=2840156&label=malang-guide" target="_blank">📖 Book on Booking.com</a>
+        <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
     </div>
+
     <div class="affiliate-card">
       <div class="hotel-name">Atria Hotel Malang</div>
       <div class="hotel-stars">★★★★</div>
       <div class="hotel-price">From Rp700,000/night</div>
       <div class="hotel-desc">Modern business hotel near Malang Town Square. Rooftop pool, gym, excellent breakfast buffet.</div>
-      <a class="btn-book gold-btn" href="https://www.booking.com/hotel/id/atria-malang.html?aid=2840156&label=malang-guide" target="_blank">📖 Book on Booking.com</a>
-      <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
+        <a class="btn-book gold-btn" href="https://www.booking.com/hotel/id/atria-malang.html?aid=2840156&label=malang-guide" target="_blank">📖 Book on Booking.com</a>
+        <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
     </div>
+
     <div class="affiliate-card">
       <div class="hotel-name">The Singhasari Resort (Batu)</div>
       <div class="hotel-stars">★★★★★</div>
       <div class="hotel-price">From Rp2,500,000/night</div>
       <div class="hotel-desc">Mountain resort near Batu. Stunning views, multiple pools, spa. Themed on ancient Singosari Kingdom.</div>
-      <a class="btn-book gold-btn" href="https://www.booking.com/hotel/id/the-singhasari-resort.html?aid=2840156&label=malang-guide" target="_blank">📖 Book on Booking.com</a>
-      <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
+        <a class="btn-book gold-btn" href="https://www.booking.com/hotel/id/the-singhasari-resort.html?aid=2840156&label=malang-guide" target="_blank">📖 Book on Booking.com</a>
+        <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
     </div>
+
     <div class="affiliate-card">
       <div class="hotel-name">Helios Hotel Malang</div>
       <div class="hotel-stars">★★★</div>
       <div class="hotel-price">From Rp250,000/night</div>
       <div class="hotel-desc">Best value mid-range. Clean, central, friendly staff. Walking distance to Jl. Ijen. Popular with backpackers.</div>
-      <a class="btn-book" href="https://www.booking.com/hotel/id/helios-malang.html?aid=2840156&label=malang-guide" target="_blank">📖 Book on Booking.com</a>
-      <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
+        <a class="btn-book" href="https://www.booking.com/hotel/id/helios-malang.html?aid=2840156&label=malang-guide" target="_blank">📖 Book on Booking.com</a>
+        <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
     </div>
+
     <div class="affiliate-card">
       <div class="hotel-name">Search All Malang Hotels</div>
       <div class="hotel-stars">⭐ Best Deals</div>
       <div class="hotel-price">Compare 200+ properties</div>
       <div class="hotel-desc">See all available hotels, guesthouses, and villas in Malang with real-time pricing and availability.</div>
-      <a class="btn-book gold-btn" href="https://www.booking.com/searchresults.html?city=-2363165&aid=2840156&label=malang-guide" target="_blank">🔍 Search All Hotels</a>
-      <a class="btn-book" href="https://www.agoda.com/search?city=17371&tag=2840156" target="_blank" style="margin-top:6px;">🔍 Search on Agoda</a>
-      <p class="affiliate-disclaimer">* Affiliate links — we may earn a small commission at no extra cost to you</p>
+        <a class="btn-book gold-btn" href="https://www.booking.com/searchresults.html?city=-2363165&aid=2840156&label=malang-guide" target="_blank">🔍 Search All Hotels</a>
+        <a class="btn-book" href="https://www.agoda.com/search?city=17371&tag=2840156" target="_blank" style="margin-top:6px;">🔍 Search on Agoda</a>
+        <p class="affiliate-disclaimer">* Affiliate links — we may earn a small commission at no extra cost to you</p>
     </div>
+
     <div class="affiliate-card">
       <div class="hotel-name">Near Mount Bromo</div>
       <div class="hotel-stars">🌋 Best Sunrise Access</div>
       <div class="hotel-price">From Rp400,000/night</div>
       <div class="hotel-desc">Stay in Cemoro Lawang village for best Bromo sunrise access. Cold nights — ensure room has hot water.</div>
-      <a class="btn-book gold-btn" href="https://www.booking.com/searchresults.html?ss=Cemoro+Lawang&aid=2840156&label=malang-guide" target="_blank">📖 Find Bromo Hotels</a>
-      <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
+        <a class="btn-book gold-btn" href="https://www.booking.com/searchresults.html?ss=Cemoro+Lawang&aid=2840156&label=malang-guide" target="_blank">📖 Find Bromo Hotels</a>
+        <p class="affiliate-disclaimer">* Affiliate link — we may earn a small commission at no extra cost to you</p>
     </div>
   </div>
 </div>
@@ -588,74 +557,61 @@
   <div class="card-grid">
     <div class="tour-card">
       <div class="tour-img-placeholder">🌋</div>
-      <div class="tour-body">
-        <h3>Mount Bromo Sunrise Jeep Tour</h3>
-        <p>Watch the sunrise from Penanjakan viewpoint, then drive through the Sea of Sand to the crater rim.</p>
-        <div class="tour-meta">
-          <span class="tour-price">From Rp350,000/person</span>
-          <span class="tour-rating">★★★★★ 4.9</span>
+        <div class="tour-body">
+          <h3>Mount Bromo Sunrise Jeep Tour</h3>
+          <p>Watch the sunrise from Penanjakan viewpoint, then drive through the Sea of Sand to the crater rim.</p>
+            <div class="tour-meta">
+              <span class="tour-price">From Rp350,000/person</span>
+              <span class="tour-rating">★★★★★ 4.9</span>
+            </div>
+          <!-- Replace partner_id with your GetYourGuide ID -->
+          <a class="btn-book gold-btn" href="https://www.getyourguide.com/mount-bromo-l97438/?partner_id=2840156" target="_blank">📅 Book via GetYourGuide</a>
+          <a class="btn-book" href="https://www.klook.com/activity/3893-mount-bromo-sunrise-tour/?aid=https://affiliate.klook.com/redirect?aid=118558&aff_adid=1256008&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" style="margin-top:6px;">📅 Book via Klook</a>
+          <p class="affiliate-disclaimer">* Affiliate links</p>
         </div>
-        <!-- Replace partner_id with your GetYourGuide ID -->
-        <a class="btn-book gold-btn" href="https://www.getyourguide.com/mount-bromo-l97438/?partner_id=2840156" target="_blank">📅 Book via GetYourGuide</a>
-        <a class="btn-book" href="https://www.klook.com/activity/3893-mount-bromo-sunrise-tour/?aid=https://affiliate.klook.com/redirect?aid=118558&aff_adid=1256008&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" style="margin-top:6px;">📅 Book via Klook</a>
-        <p class="affiliate-disclaimer">* Affiliate links</p>
-      </div>
-    </div>
-    <div class="tour-card">
-      <div class="tour-img-placeholder">🎨</div>
-      <div class="tour-body">
-        <h3>Malang City Heritage Walking Tour</h3>
-        <p>Dutch colonial architecture, colorful villages, traditional markets, and local street food tasting.</p>
-        <div class="tour-meta">
-          <span class="tour-price">From Rp200,000/person</span>
-          <span class="tour-rating">★★★★★ 4.8</span>
-        </div>
-        <a class="btn-book gold-btn" href="https://www.getyourguide.com/malang-l97437/?partner_id=2840156" target="_blank">📅 Book via GetYourGuide</a>
-        <p class="affiliate-disclaimer">* Affiliate link</p>
-      </div>
-    </div>
-    <div class="tour-card">
-      <div class="tour-img-placeholder">🍜</div>
-      <div class="tour-body">
-        <h3>Malang Food Tour — Local Flavors</h3>
-        <p>Taste bakso, rawon, rujak cingur and other Malang specialties with a knowledgeable local guide.</p>
-        <div class="tour-meta">
-          <span class="tour-price">From Rp250,000/person</span>
-          <span class="tour-rating">★★★★★ 4.7</span>
-        </div>
-        <a class="btn-book gold-btn" href="https://www.getyourguide.com/malang-l97437/?partner_id=2840156&q=food+tour" target="_blank">📅 Book via GetYourGuide</a>
-        <p class="affiliate-disclaimer">* Affiliate link</p>
-      </div>
-    </div> 
-    <div class="tour-card">
-      <div class="tour-img-placeholder">🏊</div>
-      <div class="tour-body">
-        <h3>Sempu Island Day Trip</h3>
-        <p>Trek through protected rainforest to the legendary Segara Anakan lagoon. A hidden gem near Malang.</p>
-        <div class="tour-meta">
-          <span class="tour-price">From Rp450,000/person</span>
-          <span class="tour-rating">★★★★☆ 4.6</span>
-        </div>
-        <a class="btn-book gold-btn" href="https://www.getyourguide.com/malang-l97437/?partner_id=2840156&q=sempu" target="_blank">📅 Book via GetYourGuide</a>
-        <p class="affiliate-disclaimer">* Affiliate link</p>
-      </div>
     </div>
 
-<!-- DIRECT BOOKING CARD -->
-    <div class="tour-card" style="border: 2px solid var(--gold);">
-      <div class="tour-img-placeholder" style="background: linear-gradient(135deg, var(--gold), var(--amber));">💬</div>
-      <div class="tour-body">
-        <h3>Book Direct via WhatsApp</h3>
-        <p>Custom tours, private Bromo trips, airport transfers. Contact us directly for the best prices and personalized itineraries.</p>
-        <div class="tour-meta">
-          <span class="tour-price">Best Price Guarantee</span>
-          <span class="tour-rating">✅ Fast Response</span>
+    <div class="tour-card">
+      <div class="tour-img-placeholder">🎨</div>
+        <div class="tour-body">
+          <h3>Malang City Heritage Walking Tour</h3>
+          <p>Dutch colonial architecture, colorful villages, traditional markets, and local street food tasting.</p>
+            <div class="tour-meta">
+              <span class="tour-price">From Rp200,000/person</span>
+              <span class="tour-rating">★★★★★ 4.8</span>
+            </div>
+              <a class="btn-book gold-btn" href="https://www.getyourguide.com/malang-l97437/?partner_id=2840156" target="_blank">📅 Book via GetYourGuide</a>
+              <p class="affiliate-disclaimer">* Affiliate link</p>
         </div>
-        <a class="btn-book gold-btn" href="https://wa.me/6281250900387?text=Hi!%20I%20found%20your%20Malang%20Travel%20Guide%20and%20I%27d%20like%20to%20book%20a%20tour." target="_blank">💬 WhatsApp Us Now</a>
-      </div>
-    </div>
   </div>
-</div>
+
+    <div class="tour-card">
+      <div class="tour-img-placeholder">🍜</div>
+        <div class="tour-body">
+          <h3>Malang Food Tour — Local Flavors</h3>
+          <p>Taste bakso, rawon, rujak cingur and other Malang specialties with a knowledgeable local guide.</p>
+            <div class="tour-meta">
+              <span class="tour-price">From Rp250,000/person</span>
+              <span class="tour-rating">★★★★★ 4.7</span>
+            </div>
+              <a class="btn-book gold-btn" href="https://www.getyourguide.com/malang-l97437/?partner_id=2840156&q=food+tour" target="_blank">📅 Book via GetYourGuide</a>
+              <p class="affiliate-disclaimer">* Affiliate link</p>
+        </div>
+    </div> 
+
+    <div class="tour-card">
+      <div class="tour-img-placeholder">🏊</div>
+        <div class="tour-body">
+          <h3>Sempu Island Day Trip</h3>
+          <p>Trek through protected rainforest to the legendary Segara Anakan lagoon. A hidden gem near Malang.</p>
+            <div class="tour-meta">
+              <span class="tour-price">From Rp450,000/person</span>
+              <span class="tour-rating">★★★★☆ 4.6</span>
+            </div>
+              <a class="btn-book gold-btn" href="https://www.getyourguide.com/malang-l97437/?partner_id=2840156&q=sempu" target="_blank">📅 Book via GetYourGuide</a>
+              <p class="affiliate-disclaimer">* Affiliate link</p>
+        </div>
+    </div>
 
 <!-- ═══════ SECTION: TRANSPORT ═══════ -->
 <div class="section" id="transport">
@@ -669,6 +625,8 @@
     <div class="transport-card"><h3>✈️ Airport (ABD Saleh)</h3><p>Domestic flights to Jakarta, Bali, Makassar. 18km from city center. Taxis and Grab available outside arrivals.</p><div class="price-badge">Taxi: Rp80,000–120,000</div></div>
   </div>
 </div>
+
+
 
 <!-- ═══════ SECTION: EMERGENCY ═══════ -->
 <div class="section" id="emergency">
@@ -713,7 +671,7 @@
         <div class="dist-badge">~1.5 km from city center</div><br>
         <a class="map-link" href="https://maps.google.com/?q=RS+Panti+Nirmala+Malang" target="_blank">🗺️ Open in Google Maps</a>
       </div>
-      <div class="nearby-card hosp">
+      <div class="nearby-card hospital">
         <h4>RS Hermina Tangkuban Perahu</h4>
         <p>Jl. Tangkuban Perahu No.33, Malang</p>
         <p>Modern private hospital — fast emergency response</p>
@@ -762,11 +720,6 @@
       </div>
     </div>
   </div>
-
-  <div class="map-container" style="margin-top:24px;">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15766.4!2d112.6149!3d-7.9797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6278a3dd5dfb9%3A0x6d624a7f5fafe9b0!2sRSUD%20Dr.%20Saiful%20Anwar!5e0!3m2!1sen!2s!4v1" allowfullscreen loading="lazy"></iframe>
-  </div>
-</div>
 
 <!-- ═══════ SECTION: DO'S & DON'TS ═══════ -->
 <div class="section" id="dodont">
@@ -822,6 +775,11 @@
   </div>
 </div>
 
+  <div class="map-container" style="margin-top:24px;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15766.4!2d112.6149!3d-7.9797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6278a3dd5dfb9%3A0x6d624a7f5fafe9b0!2sRSUD%20Dr.%20Saiful%20Anwar!5e0!3m2!1sen!2s!4v1" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>  
+
 <!-- ═══════ SECTION: MAP ═══════ -->
 <div class="section" id="map">
   <h2 class="section-title">📍 Malang City Map</h2>
@@ -854,7 +812,7 @@
     </div>
   </div>
 
-  <!-- ====== PAID LISTING FORM ====== -->
+<!-- ====== PAID LISTING FORM ====== -->
   <div class="listing-form" id="listingForm">
     <h3>📋 Apply for a Featured Listing</h3>
     <p>Get your business in front of thousands of tourists visiting Malang. Fill in the form below and we'll contact you within 24 hours.</p>
@@ -942,7 +900,7 @@
    Some links are affiliate links that may earn a small commission 
   </p>
   </footer>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
  
